@@ -1,0 +1,124 @@
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  color:#123C69;
+}
+
+a{
+  color:#BAB2B5;
+  text-decoration: none;
+}
+
+ul li{
+  list-style: none;
+}
+
+.signup-btn{
+  padding:0.5rem 1.5rem;
+  border:1px solid #AC3B61;
+  background:#AC3B61;
+  color:#BAB2B5;
+  font-size: 1.2rem;
+  border-radius: 3px;
+}
+
+.signup-btn:hover{
+  cursor: pointer;
+  color:#123C69;
+}
+
+.nav-bar{
+  background:#AC3B61;
+  color:#BAB2B5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding:1rem 3rem;
+}
+
+.nav-bar h1{
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+}
+
+.nav-bar ul{
+  padding:1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar ul li{
+  padding-left:1.75rem;
+}
+
+.nav-bar ul a{
+  font-size: 1.2rem;
+}
+
+.nav-bar ul a:hover{
+  color:#123C69;
+  text-decoration: underline;
+}
+
+.container{
+  max-width: 1500px;
+  overflow: hidden;
+  
+  background:#BAB2B5;
+}
+
+.container .welcome-sec{
+  padding:1.5rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border-bottom: 0.5px dotted #AC3B61; */
+}
+
+.welcome-sec h1{
+  font-size:2.5rem;
+  margin-bottom:0.5rem;
+}
+
+.welcome-sec p{
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.container .about-sec{
+  margin-top:1.75rem; 
+}
+
+.about-sec .about-div{
+  margin-bottom:1rem;
+}
+
+.about-sec .about-div,
+.about-sec .benefits-div{
+  display: grid;
+  grid-template-columns:1fr 2fr 1fr;
+}
+
+.about-div h2,
+.benefits-div h2{
+  margin-bottom:0.25rem;
+}
+
+.benefits-div ul{
+  padding-left:2rem;
+}
+
+.benefits-div ul li{
+  list-style: disc;
+}
+
+.benefits-div p{
+  margin-top: 0.5rem;
+}
