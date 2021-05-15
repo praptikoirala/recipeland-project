@@ -6,11 +6,12 @@
 
 body{
   font-family: 'Roboto', sans-serif;
-  color:#123C69;
+  color:#393e46;
+  height:100vh;
 }
 
 a{
-  color:#EDC7B7;
+  color:#eeeeee;
   text-decoration: none;
 }
 
@@ -19,17 +20,34 @@ ul li{
 }
 
 .nav-bar{
-  background:#AC3B61;
-  color:#EDC7B7;
+  background:#00adb5;
+  color:#eeeeee;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding:0.5rem 3rem;
+  padding:0rem 3rem;
+}
+
+.nav-bar .header{
+  display: flex;
+  align-items: center;
+  padding:0;
+}
+
+.nav-bar img{
+  width:40px;
+  border-radius:50%;
 }
 
 .nav-bar h1{
   font-family: 'Dancing Script', cursive;
-  font-size: 2.25rem;
+  font-size: 2rem;
+  padding-left: 0.25rem;
+}
+
+.nav-bar i{
+  padding-right:0.25rem;
+  align-self: center;
 }
 
 .nav-bar ul{
@@ -48,28 +66,26 @@ ul li{
 }
 
 .nav-bar ul a:hover{
-  color:#123C69;
-  text-decoration: underline;
+  color:#393e46;
 }
 
 .container{
   max-width: 1500px;
-  height:100vh;
+  height: 100%;
   overflow: hidden;
   display: flex;
-  background: #EDC7B7;
+  background:rgba(170,216,211,0.5);
   justify-content: center;
 }
 
 .container::before{
   content: '';
   position: absolute;
-  background: url('./images/main-bg1.jpg')no-repeat center center/cover;
-  background-color: #EDC7B7;
+  background: url('./images/main-bg2.jpg')no-repeat center center/cover;
   left:0;
   height:100%;
   width:100%;
-  opacity:0.4;
+  opacity:0.25;
 }
 
 .container .welcome-sec{
@@ -91,48 +107,41 @@ ul li{
   margin-bottom:1rem;
 }
 
-.welcome-sec .start-btn{
-  padding:0.5rem 1.5rem;
-  border:1px solid #AC3B61;
-  background:#AC3B61;
-  color:#EDC7B7;
-  font-size: 1.2rem;
-  border-radius:1.5rem;
-}
-
-.welcome-sec .start-btn:hover{
-  cursor: pointer;
-  background:#123C69;
-  border:1px solid #123C69;
-}
-
-/* .container .about-sec{
-  margin-top:1.25rem; 
-}
-
-.about-sec .about-div{
-  margin-bottom:1rem;
-}
-
-.about-sec .about-div,
-.about-sec .benefits-div{
+.welcome-sec .buttons{
   display: grid;
-  grid-template-columns:1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:0.75rem;
 }
 
-.about-div h2,
-.benefits-div h2{
-  margin-bottom:0.25rem;
+.buttons .start-btn,
+.buttons .signin-btn{
+  padding:0.5rem 2rem;
+  font-size:1.1rem;
+  border-radius:20px;
 }
 
-.benefits-div ul{
-  padding-left:2rem;
+.buttons .start-btn{
+  color:#eeeeee;
+  background: #00adb5;
+  border:1px solid #00adb5;
 }
 
-.benefits-div ul li{
-  list-style: disc;
+.buttons .signin-btn{
+  background:#eeeeee;
+  border:1px solid #eeeeee;
+  color:#00adb5;
+  padding:0.5rem 2.5rem;
 }
 
-.benefits-div p{
-  margin-top: 0.5rem;
-} */
+.buttons .start-btn:hover{
+  background:#eeeeee;
+  border:1px solid #eeeeee;
+  color:#00adb5;
+}
+
+.buttons .signin-btn:hover{
+  color:#eeeeee;
+  background: #00adb5;
+  border:1px solid #00adb5;
+}
+
