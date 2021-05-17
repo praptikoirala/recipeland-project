@@ -18,12 +18,25 @@ ul li {
   list-style: none;
 }
 
-.container .welcome-sec .buttons .btn {
+.home-container .welcome-sec .buttons .btn {
   display: inline-block;
   padding: 0.5rem 2.25rem;
   font-size: 1.1rem;
   border-radius: 20px;
   text-align: center;
+}
+
+form .submit-btn {
+  background: #00adb5;
+  border: 1px solid #00adb5;
+  font-size: 1.1rem;
+}
+
+form .submit-btn:hover {
+  cursor: pointer;
+  background: #393e46;
+  color: #00adb5;
+  border-color: #393e46;
 }
 
 .nav-bar {
@@ -81,35 +94,7 @@ ul li {
   text-decoration: underline;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #393e46;
-}
-
-a {
-  color: #eeeeee;
-  text-decoration: none;
-}
-
-ul li {
-  list-style: none;
-}
-
-.container .welcome-sec .buttons .btn {
-  display: inline-block;
-  padding: 0.5rem 2.25rem;
-  font-size: 1.1rem;
-  border-radius: 20px;
-  text-align: center;
-}
-
-.container {
+.home-container {
   max-width: 1500px;
   height: 90.5vh;
   overflow: hidden;
@@ -118,7 +103,7 @@ ul li {
   justify-content: center;
 }
 
-.container::before {
+.home-container::before {
   content: '';
   position: absolute;
   background: url("/images/main-bg.jpg") no-repeat center center/cover;
@@ -128,7 +113,7 @@ ul li {
   opacity: 0.25;
 }
 
-.container .welcome-sec {
+.home-container .welcome-sec {
   transform: translate(0%, 0%);
   padding: 1.5rem;
   display: flex;
@@ -137,43 +122,98 @@ ul li {
   justify-content: center;
 }
 
-.container .welcome-sec h1 {
+.home-container .welcome-sec h1 {
   font-family: "Dancing Script", cursive;
   font-size: 4.5rem;
   margin-bottom: 0.5rem;
 }
 
-.container .welcome-sec p {
+.home-container .welcome-sec p {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.container .welcome-sec .buttons {
+.home-container .welcome-sec .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.75rem;
 }
 
-.container .welcome-sec .buttons .start-btn {
+.home-container .welcome-sec .buttons .start-btn {
   color: #eeeeee;
   background: #00adb5;
   border: 1px solid #00adb5;
 }
 
-.container .welcome-sec .buttons .start-btn:hover {
+.home-container .welcome-sec .buttons .start-btn:hover {
   background: #eeeeee;
   border: 1px solid #eeeeee;
   color: #00adb5;
 }
 
-.container .welcome-sec .buttons .signin-btn {
+.home-container .welcome-sec .buttons .signin-btn {
   background: #eeeeee;
   border: 1px solid #eeeeee;
   color: #00adb5;
 }
 
-.container .welcome-sec .buttons .signin-btn:hover {
+.home-container .welcome-sec .buttons .signin-btn:hover {
   color: #eeeeee;
   background: #00adb5;
   border: 1px solid #00adb5;
+}
+
+.container {
+  max-width: 1500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90.5vh;
+  margin: auto;
+  background: rgba(170, 216, 211, 0.75);
+}
+
+.container h1 {
+  font-family: "Dancing Script", cursive;
+  margin: 0.65rem 0 0.2rem 0;
+}
+
+.container p {
+  font-size: 1rem;
+}
+
+.container p a {
+  color: #00adb5;
+}
+
+.container p a:hover {
+  color: #eeeeee;
+  text-decoration: underline;
+}
+
+.container .form-box {
+  width: 30%;
+  margin-top: 0.5rem;
+  padding: 1rem 2.5rem 0.5rem 2.5rem;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+}
+
+.container .form-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .form-box form label {
+  margin-bottom: 0.5rem;
+}
+
+.container .form-box form input {
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid #eeeeee;
+  border-radius: 2px;
+  margin-bottom: 0.75rem;
 }
