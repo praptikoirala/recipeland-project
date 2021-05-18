@@ -68,31 +68,35 @@ form .submit-btn:hover {
   padding-left: 0.25rem;
 }
 
-.nav-bar ul {
+.nav-bar .sidemenu {
+  display: none;
+}
+
+.nav-bar .menu-items {
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.nav-bar ul li {
-  padding-left: 1.75rem;
+.nav-bar .menu-items li {
+  padding-left: 1.5rem;
 }
 
-.nav-bar ul li a {
-  font-size: 1.2rem;
+.nav-bar .menu-items li a {
+  font-size: 1.1rem;
 }
 
-.nav-bar ul li a i {
+.nav-bar .menu-items li a i {
   padding-right: 0.25rem;
   align-self: center;
 }
 
-.nav-bar ul li a:hover {
+.nav-bar .menu-items li a:hover {
   color: #393e46;
 }
 
-.nav-bar ul .current {
+.nav-bar .menu-items .current {
   color: #393e46;
   text-decoration: underline;
 }
@@ -232,4 +236,106 @@ form .submit-btn:hover {
 
 .container {
   height: 90.5vh;
+}
+
+.menu-items.show-menu {
+  transform: translateX(0);
+}
+
+@media (max-width: 800px) {
+  .nav-bar .sidemenu {
+    display: inline-block;
+    z-index: 20;
+  }
+  .nav-bar .sidemenu:hover {
+    cursor: pointer;
+  }
+  .nav-bar .sidemenu .line {
+    display: flex;
+    width: 1.75rem;
+    height: 0.15rem;
+    margin-bottom: 0.2rem;
+    border-radius: 2px;
+    background: #eeeeee;
+  }
+  .nav-bar .menu-items {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 35vw;
+    padding: 0rem;
+    background: rgba(0, 173, 181, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 5;
+    transform: translateX(100%);
+  }
+  .nav-bar .menu-items li {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dotted #393e46;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav-bar .menu-items {
+    width: 40vw;
+  }
+  .nav-bar .menu-items li {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav-bar .menu-items {
+    width: 45vw;
+  }
+  .nav-bar .menu-items li {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 475px) {
+  .nav-bar .menu-items {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav-bar .menu-items {
+    width: 55vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-bar {
+    padding: 0rem 2.5rem;
+  }
+  .nav-bar .header img {
+    width: 35px;
+  }
+  .nav-bar .header h1 {
+    font-size: 1.8rem;
+  }
+  .nav-bar .menu-items li {
+    padding-left: 1.5rem;
+  }
+  .nav-bar .menu-items li a {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-bar {
+    z-index: 10;
+  }
+  .nav-bar .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0;
+  }
 }

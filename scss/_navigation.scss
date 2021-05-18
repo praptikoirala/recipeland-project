@@ -25,17 +25,21 @@
       }
    }
 
-   ul{
+   .sidemenu{
+      display: none;
+   }
+
+   .menu-items{
       padding:1rem;
       display: flex;
       align-items: center;
       justify-content: center;
 
       li{
-         padding-left:1.75rem;
+         padding-left:1.5rem;
 
          a{
-            font-size: 1.2rem;
+            font-size: 1.1rem;
 
             i{
                padding-right:0.25rem;
@@ -54,4 +58,25 @@
       }
    }
  }
- 
+
+//  //javascript
+// .line-1 .rotate{
+//    display: none;
+// }
+
+// .line-2 .rotate{
+//    transform: rotate(45deg);
+// }
+
+// .line-3 .rotate{
+//    transform:rotate(-45deg);
+// }
+
+// line{
+
+//    & .line-1{
+//       & .rotate{
+//          display: none;
+//       }
+//    }
+// }
