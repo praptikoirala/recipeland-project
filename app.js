@@ -12,6 +12,4 @@ function displayMenu(){
    }else{
       menu.classList.add('show-menu');
    }
-
-   console.log(menu);
 }

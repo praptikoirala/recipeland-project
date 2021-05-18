@@ -238,10 +238,6 @@ form .submit-btn:hover {
   height: 90.5vh;
 }
 
-.menu-items.show-menu {
-  transform: translateX(0);
-}
-
 @media (max-width: 800px) {
   .nav-bar .sidemenu {
     display: inline-block;
@@ -271,6 +267,9 @@ form .submit-btn:hover {
     align-items: flex-start;
     z-index: 5;
     transform: translateX(100%);
+  }
+  .nav-bar .menu-items.show-menu {
+    transform: translateX(0);
   }
   .nav-bar .menu-items li {
     width: 100%;

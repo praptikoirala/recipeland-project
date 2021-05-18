@@ -1,11 +1,9 @@
 @import 'variables';
 
-.menu-items{
+// .menu-items{
 
-   &.show-menu{
-      transform: translateX(0);
-   }   
-}
+   
+// }
 
 @media(max-width:800px){
    .nav-bar{
@@ -41,6 +39,10 @@
          align-items:flex-start ;
          z-index:5;
          transform: translateX(100%);
+
+         &.show-menu{
+            transform: translateX(0);
+         }  
    
          li{
             width:100%;
