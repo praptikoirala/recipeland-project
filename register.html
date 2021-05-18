@@ -30,22 +30,28 @@
   </nav>
 
   <div class="container">
+
     <h1>RecipeLand</h1>
-    <p>Already have an account?<a href="/html/signin.html">SignIn</a></p>
+    <p>Already have an account?<a href="./signin.html">Sign in</a></p>
 
     <div class="form-box">
       <form>
         <label for="name">FirstName</label>
         <input type="text" placeholder="Enter your first name">
+        <p class="error-msg"></p>
         <label for="name">LastName</label>
         <input type="text" placeholder="Enter your last name">
+        <p class="error-msg"></p>
         <label for="email">Email</label>
         <input type="text" placeholder="Enter your email">
+        <p class="error-msg"></p>
         <label for="passsword">Password</label>
         <input type="password" placeholder="Enter your password">
+        <p class="error-msg"></p>
         <label for="password">Retype-Password</label>
         <input type="password" placeholder="Re-enter your password">
-        <input type="submit" value="Register" class="submit-btn">
+        <p class="error-msg"></p>
+        <input type="submit" value="Register" class="submit-btn signup-btn">
       </form>
     </div>
 
