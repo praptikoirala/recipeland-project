@@ -1,10 +1,5 @@
 @import 'variables';
 
-// .menu-items{
-
-   
-// }
-
 @media(max-width:800px){
    .nav-bar{
 
@@ -17,12 +12,19 @@
          }
 
          .line{
-            display: flex;
-            width:1.75rem;
-            height:0.15rem;
-            margin-bottom: 0.2rem;
-            border-radius: 2px;
-            background: $light-color;
+           display: inline-block;
+
+           &.remove-line{
+              display: none;
+           }
+         }
+
+         .cross{
+            display: none;
+
+            &.show-cross{
+               display: inline-block;
+            }
          }
       }
    
@@ -33,12 +35,13 @@
          height:100vh;
          width:35vw;
          padding:0rem;
-         background: rgba($color:$primary-color, $alpha:0.5);
+         background: rgba($color:$primary-color, $alpha:0.2);
          flex-direction: column;
          justify-content:center;
          align-items:flex-start ;
          z-index:5;
          transform: translateX(100%);
+         transition: transform 0.25s ease-in-out;
 
          &.show-menu{
             transform: translateX(0);

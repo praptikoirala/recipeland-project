@@ -247,12 +247,16 @@ form .submit-btn:hover {
     cursor: pointer;
   }
   .nav-bar .sidemenu .line {
-    display: flex;
-    width: 1.75rem;
-    height: 0.15rem;
-    margin-bottom: 0.2rem;
-    border-radius: 2px;
-    background: #eeeeee;
+    display: inline-block;
+  }
+  .nav-bar .sidemenu .line.remove-line {
+    display: none;
+  }
+  .nav-bar .sidemenu .cross {
+    display: none;
+  }
+  .nav-bar .sidemenu .cross.show-cross {
+    display: inline-block;
   }
   .nav-bar .menu-items {
     position: fixed;
@@ -261,12 +265,13 @@ form .submit-btn:hover {
     height: 100vh;
     width: 35vw;
     padding: 0rem;
-    background: rgba(0, 173, 181, 0.5);
+    background: rgba(0, 173, 181, 0.2);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     z-index: 5;
     transform: translateX(100%);
+    transition: transform 0.25s ease-in-out;
   }
   .nav-bar .menu-items.show-menu {
     transform: translateX(0);
