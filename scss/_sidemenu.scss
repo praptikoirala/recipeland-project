@@ -13,6 +13,7 @@
 
          .line{
            display: inline-block;
+           font-size: 1.45rem;
 
            &.remove-line{
               display: none;
@@ -21,6 +22,7 @@
 
          .cross{
             display: none;
+            font-size: 1.45rem;
 
             &.show-cross{
                display: inline-block;
@@ -35,7 +37,7 @@
          height:100vh;
          width:35vw;
          padding:0rem;
-         background: rgba($color:$primary-color, $alpha:0.2);
+         background:$primary-color;
          flex-direction: column;
          justify-content:center;
          align-items:flex-start ;
@@ -51,7 +53,7 @@
             width:100%;
             padding:1rem;
             margin-bottom:0.5rem;
-            border-bottom:1px dotted $dark-color;
+            border-bottom:1px solid $dark-color;
          }
       }
     }

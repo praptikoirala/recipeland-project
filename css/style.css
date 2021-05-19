@@ -88,7 +88,7 @@ form .submit-btn:hover {
 }
 
 .nav-bar .menu-items li a i {
-  padding-right: 0.25rem;
+  padding-right: 0.5rem;
   align-self: center;
 }
 
@@ -248,12 +248,14 @@ form .submit-btn:hover {
   }
   .nav-bar .sidemenu .line {
     display: inline-block;
+    font-size: 1.45rem;
   }
   .nav-bar .sidemenu .line.remove-line {
     display: none;
   }
   .nav-bar .sidemenu .cross {
     display: none;
+    font-size: 1.45rem;
   }
   .nav-bar .sidemenu .cross.show-cross {
     display: inline-block;
@@ -265,7 +267,7 @@ form .submit-btn:hover {
     height: 100vh;
     width: 35vw;
     padding: 0rem;
-    background: rgba(0, 173, 181, 0.2);
+    background: #00adb5;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -280,7 +282,7 @@ form .submit-btn:hover {
     width: 100%;
     padding: 1rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px dotted #393e46;
+    border-bottom: 1px solid #393e46;
   }
 }
 
