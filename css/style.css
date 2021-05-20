@@ -103,11 +103,12 @@ form .submit-btn:hover {
 
 .home-container {
   max-width: 1500px;
-  height: 90.5vh;
+  height: 90.6vh;
   overflow: hidden;
   display: flex;
   background: rgba(170, 216, 211, 0.5);
   justify-content: center;
+  align-items: center;
 }
 
 .home-container::before {
@@ -121,7 +122,7 @@ form .submit-btn:hover {
 }
 
 .home-container .welcome-sec {
-  transform: translate(0%, 0%);
+  position: fixed;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -272,7 +273,7 @@ form .submit-btn:hover {
     justify-content: center;
     align-items: flex-start;
     z-index: 5;
-    transform: translateX(100%);
+    transform: translateX(200%);
     transition: transform 0.25s ease-in-out;
   }
   .nav-bar .menu-items.show-menu {
@@ -282,7 +283,7 @@ form .submit-btn:hover {
     width: 100%;
     padding: 1rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #393e46;
+    border-bottom: 1px solid #aad8d3;
   }
 }
 
@@ -343,5 +344,109 @@ form .submit-btn:hover {
     align-items: center;
     justify-content: center;
     padding: 0.5rem 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-bar {
+    padding: 0rem 1.5rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .home-container .welcome-sec h1 {
+    font-size: 4rem;
+    margin-bottom: 0.25rem;
+  }
+  .home-container .welcome-sec p {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .home-container .welcome-sec .buttons .btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .home-container .welcome-sec h1 {
+    font-size: 3.5rem;
+  }
+  .home-container .welcome-sec p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 625px) {
+  .home-container .welcome-sec h1 {
+    font-size: 3rem;
+  }
+  .home-container .welcome-sec p {
+    font-size: 1.05rem;
+  }
+  .home-container .welcome-sec .buttons {
+    grid-gap: 0.5rem;
+  }
+  .home-container .welcome-sec .buttons .btn {
+    padding: 0.5rem 1.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 525px) {
+  .home-container .welcome-sec h1 {
+    font-size: 2.75rem;
+  }
+  .home-container .welcome-sec .buttons .btn {
+    padding: 0.35rem 1.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .home-container .welcome-sec {
+    padding: 1.85rem;
+  }
+  .home-container .welcome-sec h1 {
+    font-size: 2.35rem;
+    margin-bottom: 0.15rem;
+  }
+  .home-container .welcome-sec p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .home-container .welcome-sec .buttons .btn {
+    padding: 0.35rem 1.2rem;
+  }
+}
+
+@media (max-width: 385px) {
+  .home-container .welcome-sec {
+    padding: 2rem;
+  }
+  .home-container .welcome-sec h1 {
+    font-size: 2rem;
+  }
+  .home-container .welcome-sec p {
+    font-size: 0.95rem;
+  }
+  .home-container .welcome-sec .buttons {
+    grid-gap: 0.35rem;
+  }
+  .home-container .welcome-sec .buttons .btn {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .home-container .welcome-sec {
+    padding: 1rem;
+  }
+  .home-container .welcome-sec h1 {
+    font-size: 1.8rem;
+  }
+  .home-container .welcome-sec p {
+    font-size: 0.85rem;
+  }
+  .home-container .welcome-sec .buttons {
+    grid-gap: 0.25rem;
   }
 }

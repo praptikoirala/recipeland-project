@@ -1,0 +1,161 @@
+@import 'variables';
+
+@media(max-width:950px){
+   .home-container{
+   
+      .welcome-sec{
+   
+         h1{
+            font-size:4rem;
+            margin-bottom:0.25rem;
+         }
+   
+         p{
+            font-size: 1.25rem;
+            margin-bottom:0.75rem;
+         }
+
+         .buttons{
+   
+            .btn{
+               font-size:1rem;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width:750px){
+   .home-container{
+   
+      .welcome-sec{
+   
+         h1{
+            font-size:3.5rem;
+         }
+   
+         p{
+            font-size: 1.1rem;
+         }
+      }
+   }
+}
+
+@media(max-width:625px){
+   .home-container{
+   
+      .welcome-sec{
+   
+         h1{
+            font-size:3rem;
+         }
+   
+         p{
+            font-size: 1.05rem;
+         }
+
+         .buttons{
+            grid-gap:0.5rem;
+   
+            .btn{
+               padding:0.5rem 1.75rem;
+               font-size: 0.95rem;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width:525px){
+   .home-container{
+   
+      .welcome-sec{
+   
+         h1{
+            font-size:2.75rem;
+         }
+
+         .buttons{
+   
+            .btn{
+               padding:0.35rem 1.5rem;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width:425px){
+   .home-container{
+   
+      .welcome-sec{
+         padding:1.85rem;
+   
+         h1{
+            font-size:2.35rem;
+            margin-bottom:0.15rem;
+         }
+
+         p{
+            font-size:1rem;
+            margin-bottom:0.5rem;
+         }
+
+         .buttons{
+   
+            .btn{
+               padding:0.35rem 1.2rem;
+
+            }
+         }
+      }
+   }
+}
+
+@media(max-width:385px){
+   .home-container{
+   
+      .welcome-sec{
+         padding:2rem;
+   
+         h1{
+            font-size:2rem;
+         }
+         
+         p{
+            font-size:0.95rem;
+         }
+
+         .buttons{
+            grid-gap:0.35rem;
+
+            .btn{
+               font-size:0.8rem;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width:340px){
+   .home-container{
+   
+      .welcome-sec{
+         padding:1rem;
+   
+         h1{
+            font-size:1.8rem;
+         }
+
+         p{
+            font-size:0.85rem;
+         }
+
+         .buttons{
+            grid-gap:0.25rem;
+
+         }
+      }
+   }
+}
+
