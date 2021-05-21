@@ -91,6 +91,11 @@
 
 @media(max-width:425px){
       .home-container{
+         height:92.5vh;
+
+         &::before{
+            height:92.5vh;
+         }
    
          .welcome-sec{
             padding:1.85rem;

@@ -349,6 +349,12 @@ form .submit-btn:hover {
   }
 }
 
+@media (max-width: 425px) {
+  .nav-bar {
+    height: 7.5vh;
+  }
+}
+
 @media (max-width: 400px) {
   .nav-bar {
     padding: 0rem 1.25rem;
@@ -404,6 +410,12 @@ form .submit-btn:hover {
 }
 
 @media (max-width: 425px) {
+  .home-container {
+    height: 92.5vh;
+  }
+  .home-container::before {
+    height: 92.5vh;
+  }
   .home-container .welcome-sec {
     padding: 1.85rem;
   }
