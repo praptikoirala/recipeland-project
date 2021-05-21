@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  height: 100%;
   color: #393e46;
 }
 
@@ -45,10 +46,11 @@ form .submit-btn:hover {
 .nav-bar {
   background: #00adb5;
   color: #eeeeee;
+  height: 8.5vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 3rem;
+  padding: 0rem 2rem;
 }
 
 .nav-bar .header {
@@ -103,9 +105,8 @@ form .submit-btn:hover {
 
 .home-container {
   max-width: 1500px;
-  height: 90.6vh;
+  height: 91.5vh;
   overflow: hidden;
-  scroll-behavior: none;
   display: flex;
   background: rgba(170, 216, 211, 0.5);
   justify-content: center;
@@ -117,7 +118,7 @@ form .submit-btn:hover {
   position: absolute;
   background: url("/images/main-bg.jpg") no-repeat center center/cover;
   left: 0;
-  height: 90.5vh;
+  height: 91.5vh;
   width: 100%;
   opacity: 0.25;
 }
@@ -320,7 +321,7 @@ form .submit-btn:hover {
 
 @media (max-width: 900px) {
   .nav-bar {
-    padding: 0rem 2.5rem;
+    padding: 0rem 1.75rem;
   }
   .nav-bar .header img {
     width: 35px;
@@ -350,7 +351,7 @@ form .submit-btn:hover {
 
 @media (max-width: 400px) {
   .nav-bar {
-    padding: 0rem 1.5rem;
+    padding: 0rem 1.25rem;
   }
 }
 

@@ -3,10 +3,11 @@
 .nav-bar{
    background:$primary-color;
    color:$light-color;
+   height:8.5vh;
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding:0rem 3rem;
+   padding:0rem 2rem;
 
    .header{
       display: flex;

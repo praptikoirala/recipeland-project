@@ -2,9 +2,8 @@
 
 .home-container{
    max-width: 1500px;
-   height:90.6vh;
+   height:91.5vh;
    overflow: hidden;
-   scroll-behavior: none;
    display: flex;
    background:rgba($color:$secondary-color , $alpha:0.5);
    justify-content: center;
@@ -15,7 +14,7 @@
       position: absolute;
       background: url('/images/main-bg.jpg')no-repeat center center/cover;
       left:0;
-      height:90.5vh;
+      height:91.5vh;
       width:100%;
       opacity:0.25;
    }
