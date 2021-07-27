@@ -537,7 +537,6 @@ section .search-container .recipe-disp .content .recipe-img img {
 
 section .search-container .recipe-disp .content .recipe-img img:hover {
   cursor: pointer;
-  transform: scale(1.25, 1.05);
 }
 
 section .search-container .recipe-disp .content .recipe-info {
