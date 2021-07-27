@@ -1,3 +1,4 @@
+//Hamburger-Menu
 const hamburger = document.querySelector('.sidemenu');
 const menu = document.querySelector('.menu-items');
 const line =document.querySelector('.line');
@@ -26,3 +27,62 @@ function displayMenu(){
       cross.classList.add('show-cross');
    }
 }
+
+//Display search result
+const userInput = document.querySelector('.user-inp');
+const goBtn = document.querySelector('.search-btn');
+
+const recipe = new Recipes;
+const displaySec = document.querySelector('.recipe-disp');
+
+goBtn.addEventListener('click' , () => {
+   const query = userInput.value;
+
+   if(query){
+      userInput.value = '';
+
+      document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Results:</h1>`
+
+      recipe.displayResult(query)
+         .then(data => {
+            displaySec.innerHTML = renderRecipes(data);
+         });
+   }else{
+      console.log('Nothing to search');
+   }
+
+   function renderRecipes(recipeInfo){
+      let output = '';
+      
+      for(let i = 0; i < recipeInfo.hits.length; i++){
+         const info = recipeInfo.hits[i].recipe;
+
+         if(info.mealType == undefined){
+            mealtype = 'NotAvailable';
+         }else{
+            mealtype = info.mealType;
+         }
+
+         if(info.cuisineType == undefined){
+            cuisinetype = 'NotAvailable';
+         }else{
+            cuisinetype = info.cuisineType;
+         }
+
+          output += `
+            <div class='content'>
+               <div class='recipe-img'>
+                  <img src='${info.image}'>
+               </div>
+               <div class='recipe-info'>
+                  <p>Dish: ${info.label}</p>
+                  <p>MealType: ${mealtype}</p>
+                  <p>CuisineType: ${cuisinetype}</p>
+               </div>
+            </div>
+          `
+      }
+      return output;
+
+   }
+});
