@@ -43,6 +43,30 @@ form .submit-btn:hover {
   border-color: #393e46;
 }
 
+.button {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  color: #eeeeee;
+  outline: none;
+  background-color: #00adb5;
+  border: 1px solid #00adb5;
+  border-radius: 5rem;
+}
+
+.button:focus {
+  color: #393e46;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+}
+
+.button:hover {
+  cursor: pointer;
+  color: #393e46;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+}
+
 .nav-bar {
   background: #00adb5;
   color: #eeeeee;
@@ -466,16 +490,16 @@ section .form-container .form-box form p {
 
 section .search-container {
   max-width: 1500px;
+  min-height: 91.5vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: 2rem;
   background: rgba(170, 216, 211, 0.75);
 }
 
 section .search-container .input-sec {
-  width: 35%;
+  width: 40%;
   display: flex;
   justify-content: center;
   margin-top: 0.75rem;
@@ -483,7 +507,8 @@ section .search-container .input-sec {
 
 section .search-container .input-sec input {
   background-color: #bfe2de;
-  width: 100%;
+  font-size: 1rem;
+  width: 60%;
   border: none;
   outline: none;
   border-bottom: 0.15rem solid #eeeeee;
@@ -495,24 +520,12 @@ section .search-container .input-sec input:focus {
   border-bottom: 0.15rem solid #00adb5;
 }
 
-section .search-container .input-sec .search-btn {
-  padding: 0.3rem 0.75rem;
-  color: #eeeeee;
-  background-color: #00adb5;
-  border: 1px solid #00adb5;
-  border-radius: 5rem;
-}
-
-section .search-container .input-sec .search-btn:hover {
-  cursor: pointer;
-  color: #393e46;
-  background: #eeeeee;
-  border: 1px solid #eeeeee;
-}
-
 section .search-container .heading-div {
   margin-top: 1.5rem;
-  font-size: 1.5rem;
+  font-size: 0.8rem;
+}
+
+section .search-container .heading-div h1 {
   text-align: left;
 }
 
@@ -527,16 +540,19 @@ section .search-container .recipe-disp {
 section .search-container .recipe-disp .content .recipe-img {
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
 }
 
 section .search-container .recipe-disp .content .recipe-img img {
   width: 100%;
-  margin-bottom: 0.75rem;
   border-radius: 0.25rem;
 }
 
 section .search-container .recipe-disp .content .recipe-img img:hover {
   cursor: pointer;
+  transform: scale(1.5);
+  transition: transform 0.4s ease-in-out;
 }
 
 section .search-container .recipe-disp .content .recipe-info {
@@ -545,4 +561,12 @@ section .search-container .recipe-disp .content .recipe-info {
   padding: 0.5rem;
   color: #eeeeee;
   background-color: #00adb5;
+}
+
+section .search-container .recipe-disp .content .recipe-info p:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+section .search-container .load-btn .loadBtn {
+  display: none;
 }

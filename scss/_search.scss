@@ -4,22 +4,24 @@ section{
 
    .search-container{
       max-width: 1500px;
+      min-height: 91.5vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      // justify-content: center;
       align-items: center;
       padding:2rem;
       background:rgba(170,216,211,0.75);
 
       .input-sec{
-         width:35%;
+         width:40%;
          display: flex;
          justify-content: center;
          margin-top: 0.75rem;
 
          input{
             background-color: #bfe2de;
-            width: 100%;
+            font-size: 1rem;
+            width: 60%;
             border: none;
             outline: none;
             border-bottom: 0.15rem solid $light-color;
@@ -30,27 +32,15 @@ section{
                border-bottom: 0.15rem solid $primary-color;
             }
          }
-
-         .search-btn{
-            padding:0.3rem 0.75rem;
-            color: $light-color;
-            background-color: $primary-color;
-            border: 1px solid $primary-color;
-            border-radius: 5rem;
-
-            &:hover{
-               cursor: pointer;
-               color: $dark-color;
-               background: $light-color;
-               border: 1px solid $light-color;
-            }
-         }
       }
 
       .heading-div{
          margin-top: 1.5rem;
-         font-size: 1.5rem;
-         text-align: left;
+         font-size: 0.8rem;
+
+         h1{
+            text-align: left;
+         }
       }
 
       .recipe-disp{
@@ -63,17 +53,20 @@ section{
          .content{
 
             .recipe-img{
+               // height: 75%;
                display: flex;
                justify-content: center;
+               overflow: hidden;
+               margin-bottom: 0.75rem;
 
                img{
                   width: 100%;
-                  margin-bottom: 0.75rem;
                   border-radius: 0.25rem;
 
                   &:hover{
                      cursor: pointer;
-                     // transform: scale(1.25 , 1.05);
+                     transform: scale(1.5);
+                     transition: transform 0.4s ease-in-out;
                   }
                }
             }
@@ -84,7 +77,18 @@ section{
                padding: 0.5rem;
                color: $light-color;
                background-color: $primary-color;
+
+               p:not(:last-child){
+                  margin-bottom: 0.25rem;
+               }
             }
+         }
+      }
+
+      .load-btn{
+
+         .loadBtn{
+            display: none;
          }
       }
    }

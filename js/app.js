@@ -1,3 +1,5 @@
+// import { Recipes } from "./recipes ";
+
 //Hamburger-Menu
 const hamburger = document.querySelector('.sidemenu');
 const menu = document.querySelector('.menu-items');
@@ -7,7 +9,7 @@ const cross =document.querySelector('.cross');
 
 hamburger.addEventListener('click',displayMenu);
 
-function displayMenu(){
+function displayMenu() {
 
    if(menu.classList.contains('show-menu')){
       menu.classList.remove('show-menu')
@@ -28,7 +30,7 @@ function displayMenu(){
    }
 }
 
-//Display search result
+//Search-section
 const userInput = document.querySelector('.user-inp');
 const goBtn = document.querySelector('.search-btn');
 
@@ -39,25 +41,27 @@ goBtn.addEventListener('click' , () => {
    const query = userInput.value;
 
    if(query){
-      userInput.value = '';
 
-      document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Results:</h1>`
+      document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Search results for '${query}' are:</h1>`
 
-      recipe.displayResult(query)
+      recipe.displayResult(query, 0, 12)
          .then(data => {
             displaySec.innerHTML = renderRecipes(data);
          });
+
    }else{
       console.log('Nothing to search');
    }
 
+   //Load initial contents
    function renderRecipes(recipeInfo){
       let output = '';
       
       for(let i = 0; i < recipeInfo.hits.length; i++){
          const info = recipeInfo.hits[i].recipe;
+         let mealtype, cuisinetype;
 
-         if(info.mealType == undefined){
+         if(!info.mealType){
             mealtype = 'NotAvailable';
          }else{
             mealtype = info.mealType;
@@ -80,9 +84,38 @@ goBtn.addEventListener('click' , () => {
                   <p>CuisineType: ${cuisinetype}</p>
                </div>
             </div>
-          `
+          `  
       }
-      return output;
 
+      loadMore(recipeInfo);
+
+      return output;
    }
+
+   //Load_More Contents
+   function loadMore(moreItems){
+      const userInp = userInput.value;
+
+      if(moreItems.more == true){
+         console.log(moreItems.more);
+
+         document.querySelector('.loadBtn').style.display = 'block';
+      }else{
+
+         document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>No more results for '${query}'...</h1>`
+
+         document.querySelector('.loadBtn').style.display = 'none';
+      }
+      
+      document.querySelector('.loadBtn').addEventListener('click' , () => {
+
+         recipe.displayResult(userInp, moreItems.to + 1, moreItems.to + 10)
+            .then(data => {
+               displaySec.innerHTML = renderRecipes(data);
+            });
+      })
+   }
+
 });
+
+
