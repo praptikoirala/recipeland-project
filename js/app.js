@@ -44,7 +44,7 @@ goBtn.addEventListener('click' , () => {
 
       document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Search results for '${query}' are:</h1>`
 
-      recipe.displayResult(query, 94, 103)
+      recipe.displayResult(query, 0, 12)
          .then(data => {
             displaySec.innerHTML = renderRecipes(data);
          });
@@ -102,7 +102,7 @@ goBtn.addEventListener('click' , () => {
          document.querySelector('.loadBtn').style.display = 'block';
       }else{
 
-         document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>No more results for '${query}'...</h1>`
+         document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>No more results for '${userInp}'...</h1>`
 
          document.querySelector('.loadBtn').style.display = 'none';
       }
