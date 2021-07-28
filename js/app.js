@@ -44,7 +44,7 @@ goBtn.addEventListener('click' , () => {
 
       document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Search results for '${query}' are:</h1>`
 
-      recipe.displayResult(query, 0, 12)
+      recipe.displayResult(query, 94, 103)
          .then(data => {
             displaySec.innerHTML = renderRecipes(data);
          });
