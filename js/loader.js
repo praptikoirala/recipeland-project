@@ -1,3 +1,9 @@
+const loader = document.querySelector('.loader-out');
+
 export function showLoader () {
-   console.log("prapti did some good work today that impressed her jaan");
+   loader.style.display = 'block';
+}
+
+export function hideLoader(){
+   loader.style.display = 'none';
 }

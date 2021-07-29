@@ -54,7 +54,7 @@ form .submit-btn:hover {
   border-radius: 5rem;
 }
 
-.button:focus {
+.button:active {
   color: #393e46;
   background: #eeeeee;
   border: 1px solid #eeeeee;
@@ -498,11 +498,21 @@ section .search-container {
   background: rgba(170, 216, 211, 0.75);
 }
 
+section .search-container .error-msg {
+  display: none;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #eeeeee;
+  background-color: #fe8585;
+  border-radius: 0.25rem;
+}
+
 section .search-container .input-sec {
   width: 40%;
   display: flex;
   justify-content: center;
-  margin-top: 0.75rem;
+  margin-top: 1.25rem;
 }
 
 section .search-container .input-sec input {
@@ -518,6 +528,24 @@ section .search-container .input-sec input {
 
 section .search-container .input-sec input:focus {
   border-bottom: 0.15rem solid #00adb5;
+}
+
+section .search-container .loader-out {
+  display: none;
+  margin-top: 2.5rem;
+  border: 0.12rem solid #00adb5;
+  border-bottom: none;
+  border-top: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  animation: loader 3s infinite ease-in-out;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 section .search-container .heading-div {
@@ -552,7 +580,7 @@ section .search-container .recipe-disp .content .recipe-img img {
 section .search-container .recipe-disp .content .recipe-img img:hover {
   cursor: pointer;
   transform: scale(1.2);
-  transition: transform 0.45s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 
 section .search-container .recipe-disp .content .recipe-info {

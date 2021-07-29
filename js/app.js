@@ -1,34 +1,5 @@
-// import { Recipes } from "./recipes ";
-
-//Hamburger-Menu
-const hamburger = document.querySelector('.sidemenu');
-const menu = document.querySelector('.menu-items');
-const line =document.querySelector('.line');
-const cross =document.querySelector('.cross');
-
-
-hamburger.addEventListener('click',displayMenu);
-
-function displayMenu() {
-
-   if(menu.classList.contains('show-menu')){
-      menu.classList.remove('show-menu')
-   }else{
-      menu.classList.add('show-menu');
-   }
-
-   if(line.classList.contains('remove-line')){
-      line.classList.remove('remove-line');
-   }else{
-      line.classList.add('remove-line');
-   }
-
-   if(cross.classList.contains('show-cross')){
-      cross.classList.remove('show-cross');
-   }else{
-      cross.classList.add('show-cross');
-   }
-}
+import { Recipes } from "./recipes.js";
+import { showError } from "./errorMsg.js";
 
 //Search-section
 const userInput = document.querySelector('.user-inp');
@@ -42,15 +13,16 @@ goBtn.addEventListener('click' , () => {
 
    if(query){
 
-      document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Search results for '${query}' are:</h1>`
-
       recipe.displayResult(query, 0, 12)
          .then(data => {
+            document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Search results for '${query}':</h1>`
             displaySec.innerHTML = renderRecipes(data);
          });
 
+         userInput.value = '';
+
    }else{
-      console.log('Nothing to search');
+      showError();
    }
 
    //Load initial contents
@@ -97,8 +69,6 @@ goBtn.addEventListener('click' , () => {
       const userInp = userInput.value;
 
       if(moreItems.more == true){
-         console.log(moreItems.more);
-
          document.querySelector('.loadBtn').style.display = 'block';
       }else{
 

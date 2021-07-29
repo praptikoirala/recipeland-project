@@ -12,11 +12,22 @@ section{
       padding:2rem;
       background:rgba(170,216,211,0.75);
 
+      .error-msg{
+         display: none;
+         font-size: 0.9rem;
+         margin-bottom: 0.5rem;
+         padding: 0.5rem 1rem;
+         color: $light-color;
+         background-color: $error-color;
+         border-radius: 0.25rem;
+         // border: 0.05rem solid #fe3636;
+      }
+
       .input-sec{
          width:40%;
          display: flex;
          justify-content: center;
-         margin-top: 0.75rem;
+         margin-top: 1.25rem;
 
          input{
             background-color: #bfe2de;
@@ -31,6 +42,25 @@ section{
             &:focus{
                border-bottom: 0.15rem solid $primary-color;
             }
+         }
+      }
+
+      .loader-out{
+         display: none;
+         margin-top: 2.5rem;
+         border: 0.12rem solid $primary-color;
+         border-bottom: none;
+         border-top: none;
+         height: 2rem;
+         width: 2rem;
+         border-radius: 50%;
+         animation: loader 3s infinite ease-in-out;
+      }
+
+      @keyframes loader {
+
+         to{
+            transform: rotate(360deg);
          }
       }
 
@@ -66,7 +96,7 @@ section{
                   &:hover{
                      cursor: pointer;
                      transform: scale(1.2);
-                     transition: transform 0.45s ease-in-out;
+                     transition: transform 0.7s ease-in-out;
                   }
                }
             }

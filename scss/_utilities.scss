@@ -61,7 +61,7 @@ form{
    border: 1px solid $primary-color;
    border-radius: 5rem;
 
-   &:focus{
+   &:active{
       color: $dark-color;
       background: $light-color;
       border: 1px solid $light-color;
