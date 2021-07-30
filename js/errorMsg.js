@@ -12,6 +12,6 @@ export function showError(){
 
    setTimeout( () => {
      errorMsg.style.display = 'none';
-   } , 1000);
+   } , 2000);
 
 }

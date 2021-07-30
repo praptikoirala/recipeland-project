@@ -12,22 +12,4 @@ function displayMenu() {
    line.classList.toggle('remove-line');
 
    cross.classList.toggle('show-cross');
-
-   // if(menu.classList.contains('show-menu')){
-   //    menu.classList.remove('show-menu')
-   // }else{
-   //    menu.classList.add('show-menu');
-   // }
-
-   // if(line.classList.contains('remove-line')){
-   //    line.classList.remove('remove-line');
-   // }else{
-   //    line.classList.add('remove-line');
-   // }
-
-   // if(cross.classList.contains('show-cross')){
-   //    cross.classList.remove('show-cross');
-   // }else{
-   //    cross.classList.add('show-cross');
-   // }
 }

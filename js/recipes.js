@@ -1,4 +1,4 @@
-import { hideLoader, showLoader } from "./loader.js";
+import { showLoader, hideLoader } from "./loader.js";
 
 export class Recipes{
 

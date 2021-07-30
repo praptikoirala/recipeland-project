@@ -13,9 +13,10 @@ section{
       background:rgba(170,216,211,0.75);
 
       .error-msg{
+         position: absolute;
+         top: 4rem;
          display: none;
          font-size: 0.9rem;
-         margin-bottom: 0.5rem;
          padding: 0.5rem 1rem;
          color: $light-color;
          background-color: $error-color;
@@ -24,37 +25,48 @@ section{
       }
 
       .input-sec{
-         width:40%;
+         width:50%;
          display: flex;
          justify-content: center;
-         margin-top: 1.25rem;
+         margin-top: 2rem;
 
-         input{
-            background-color: #bfe2de;
-            font-size: 1rem;
-            width: 60%;
-            border: none;
-            outline: none;
-            border-bottom: 0.15rem solid $light-color;
-            border-radius: 0.15rem;
-            margin-right: 0.5rem;
+         form{
+            width:100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
 
-            &:focus{
-               border-bottom: 0.15rem solid $primary-color;
+            input{
+               background-color: #bfe2de;
+               font-family: inherit;
+               font-size: 1rem;
+               width: 45%;
+               border: none;
+               outline: none;
+               border-bottom: 0.15rem solid $light-color;
+               border-radius: 0.15rem;
+               margin-right: 0.5rem;
+   
+               &:focus{
+                  border-bottom: 0.15rem solid $primary-color;
+               }
             }
          }
       }
 
-      .loader-out{
+      .loader{
+         position: absolute;
+         top: 15rem;
          display: none;
          margin-top: 2.5rem;
-         border: 0.12rem solid $primary-color;
+         border: 0.2rem solid $primary-color;
          border-bottom: none;
-         border-top: none;
-         height: 2rem;
-         width: 2rem;
+         border-left: none;
+         // border-top: none;
+         height: 3.5rem;
+         width: 3.5rem;
          border-radius: 50%;
-         animation: loader 3s infinite ease-in-out;
+         animation: loader 2s infinite ease-in-out;
       }
 
       @keyframes loader {
@@ -74,6 +86,7 @@ section{
       }
 
       .recipe-disp{
+         // border:1px solid red;
          padding: 1rem 2rem;
          margin: 0.5rem 2.5rem;
          display: grid;
@@ -110,6 +123,10 @@ section{
 
                p:not(:last-child){
                   margin-bottom: 0.25rem;
+               }
+
+               &:hover{
+                  cursor: pointer;
                }
             }
          }

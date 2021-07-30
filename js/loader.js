@@ -1,4 +1,4 @@
-const loader = document.querySelector('.loader-out');
+const loader = document.querySelector('.loader');
 
 export function showLoader () {
    loader.style.display = 'block';

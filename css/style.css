@@ -28,6 +28,7 @@ ul li {
 }
 
 form .submit-btn {
+  font-family: 'Roboto', sans-serif;
   margin-top: 0.5rem;
   padding: 0.5rem;
   background: #00adb5;
@@ -43,8 +44,9 @@ form .submit-btn:hover {
   border-color: #393e46;
 }
 
-.button {
+.form-sec .button, .load-btn .button {
   text-align: center;
+  font-family: inherit;
   font-size: 1rem;
   padding: 0.4rem 1rem;
   color: #eeeeee;
@@ -54,14 +56,11 @@ form .submit-btn:hover {
   border-radius: 5rem;
 }
 
-.button:active {
-  color: #393e46;
-  background: #eeeeee;
-  border: 1px solid #eeeeee;
+.form-sec .button:hover, .load-btn .button:hover {
+  cursor: pointer;
 }
 
-.button:hover {
-  cursor: pointer;
+.form-sec .button:active, .load-btn .button:active {
   color: #393e46;
   background: #eeeeee;
   border: 1px solid #eeeeee;
@@ -499,9 +498,10 @@ section .search-container {
 }
 
 section .search-container .error-msg {
+  position: absolute;
+  top: 4rem;
   display: none;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   color: #eeeeee;
   background-color: #fe8585;
@@ -509,16 +509,24 @@ section .search-container .error-msg {
 }
 
 section .search-container .input-sec {
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
-  margin-top: 1.25rem;
+  margin-top: 2rem;
 }
 
-section .search-container .input-sec input {
+section .search-container .input-sec form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section .search-container .input-sec form input {
   background-color: #bfe2de;
+  font-family: inherit;
   font-size: 1rem;
-  width: 60%;
+  width: 45%;
   border: none;
   outline: none;
   border-bottom: 0.15rem solid #eeeeee;
@@ -526,20 +534,22 @@ section .search-container .input-sec input {
   margin-right: 0.5rem;
 }
 
-section .search-container .input-sec input:focus {
+section .search-container .input-sec form input:focus {
   border-bottom: 0.15rem solid #00adb5;
 }
 
-section .search-container .loader-out {
+section .search-container .loader {
+  position: absolute;
+  top: 15rem;
   display: none;
   margin-top: 2.5rem;
-  border: 0.12rem solid #00adb5;
+  border: 0.2rem solid #00adb5;
   border-bottom: none;
-  border-top: none;
-  height: 2rem;
-  width: 2rem;
+  border-left: none;
+  height: 3.5rem;
+  width: 3.5rem;
   border-radius: 50%;
-  animation: loader 3s infinite ease-in-out;
+  animation: loader 2s infinite ease-in-out;
 }
 
 @keyframes loader {
@@ -593,6 +603,10 @@ section .search-container .recipe-disp .content .recipe-info {
 
 section .search-container .recipe-disp .content .recipe-info p:not(:last-child) {
   margin-bottom: 0.25rem;
+}
+
+section .search-container .recipe-disp .content .recipe-info:hover {
+  cursor: pointer;
 }
 
 section .search-container .load-btn .loadBtn {
