@@ -493,7 +493,6 @@ section .search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
   background: rgba(170, 216, 211, 0.75);
 }
 
@@ -559,12 +558,8 @@ section .search-container .loader {
 }
 
 section .search-container .heading-div {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   font-size: 0.8rem;
-}
-
-section .search-container .heading-div h1 {
-  text-align: left;
 }
 
 section .search-container .recipe-disp {
@@ -611,4 +606,67 @@ section .search-container .recipe-disp .content .recipe-info:hover {
 
 section .search-container .load-btn .loadBtn {
   display: none;
+  margin-bottom: 1.5rem;
+}
+
+section .search-container .details {
+  width: 70%;
+  margin-top: 1rem;
+  padding: 2rem 1rem;
+}
+
+section .search-container .details .imgInfo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+  padding: 1rem;
+}
+
+section .search-container .details .imgInfo .detailsImg {
+  display: flex;
+  align-self: center;
+  border-radius: 1.25rem;
+}
+
+section .search-container .details .imgInfo .infoHead {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+section .search-container .details .imgInfo .infos {
+  background-color: #eeeeee;
+  border-radius: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+section .search-container .details .imgInfo .infos li:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+section .search-container .details .imgInfo .infos .healthLabels {
+  margin-left: 2rem;
+}
+
+section .search-container .details .ingredientSec {
+  margin-top: 1rem;
+  border-radius: 2.5rem;
+  background-color: #eeeeee;
+  padding: 1rem 2rem;
+}
+
+section .search-container .details .ingredientSec h1 {
+  margin-bottom: 0.5rem;
+}
+
+section .search-container .details .ingredientSec .ingredients {
+  padding-left: 2rem;
+}
+
+section .search-container .details .ingredientSec .ingredients li {
+  list-style: disc;
+}
+
+section .search-container .details .ingredientSec .ingredients li:not(:last-child) {
+  margin-bottom: 0.25rem;
 }

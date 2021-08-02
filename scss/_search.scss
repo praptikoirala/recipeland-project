@@ -1,15 +1,16 @@
 @import 'variables';
 
 section{
-
+   
    .search-container{
+
       max-width: 1500px;
       min-height: 91.5vh;
       display: flex;
       flex-direction: column;
       // justify-content: center;
       align-items: center;
-      padding:2rem;
+      // padding:2rem;
       background:rgba(170,216,211,0.75);
 
       .error-msg{
@@ -62,7 +63,6 @@ section{
          border: 0.2rem solid $primary-color;
          border-bottom: none;
          border-left: none;
-         // border-top: none;
          height: 3.5rem;
          width: 3.5rem;
          border-radius: 50%;
@@ -77,12 +77,12 @@ section{
       }
 
       .heading-div{
-         margin-top: 1.5rem;
+         margin-top: 2.5rem;
          font-size: 0.8rem;
 
-         h1{
-            text-align: left;
-         }
+         // h1{
+         //    text-align: left;
+         // }
       }
 
       .recipe-disp{
@@ -136,7 +136,76 @@ section{
 
          .loadBtn{
             display: none;
+            margin-bottom: 1.5rem;
          }
       }
+
+      .details{
+         width: 70%;
+         margin-top: 1rem;
+         padding: 2rem 1rem; 
+
+         .imgInfo{
+            // border: 1px solid red;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-gap: 2rem;
+            padding: 1rem;
+
+            .detailsImg{
+               display: flex;
+               align-self: center;
+               border-radius: 1.25rem;
+               // margin-bottom: 0.25rem;
+            }
+
+            .infoHead{
+               margin-bottom: 1.5rem;
+               font-size: 2rem;
+               text-align: center;
+               // font-family: $dancing-font;
+            }
+
+            .infos{
+               background-color: $light-color;
+               border-radius: 1.5rem;
+               padding: 1rem 2rem;
+
+               li:not(:last-child){
+                  margin-bottom: 0.25rem;
+               }
+
+               .healthLabels{
+                  margin-left: 2rem;
+               }
+            }
+         }
+
+         .ingredientSec{
+            margin-top: 1rem;
+            border-radius: 2.5rem;
+            background-color: $light-color;
+            padding: 1rem 2rem;
+
+            h1{
+               margin-bottom: 0.5rem;
+            }
+
+            .ingredients{
+               padding-left: 2rem;
+
+               li{
+                  list-style: disc;
+
+                  &:not(:last-child){
+                     margin-bottom: 0.25rem;
+                  }
+               }
+            }
+         }
+
+      }
+
    }
+
 }
