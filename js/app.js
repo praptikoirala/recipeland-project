@@ -58,7 +58,7 @@ form.addEventListener('submit' , (e) => {
          }
    
           output += `
-            <div class='content'>
+            <div class='content' id = ${info.uri}>
                <div class='recipe-img'>
                   <img src='${info.image}' class='recipeImage'>
                </div>

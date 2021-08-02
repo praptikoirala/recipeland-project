@@ -8,14 +8,15 @@ export function detailedInfo(info){
          document.querySelector('.recipe-disp').innerHTML = '';
          document.querySelector('.load-btn').innerHTML = '';
 
-         const recipe = info.hits[0].recipe;
+         const contentID = e.target.parentNode.parentNode.id;
 
-         displayDetails(recipe);
+         const recipe = info.hits.find(hit => hit.recipe.uri === contentID);
+
+         displayDetails(recipe.recipe);
       }
 
       function displayDetails(arrInfo){
 
-         console.log(arrInfo.healthLabels);
    
          let cautions, dietLabel, ingredient = '',healthLabel = '', i;
 
