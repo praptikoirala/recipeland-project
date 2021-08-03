@@ -3,10 +3,11 @@ export function detailedInfo(info){
    document.querySelector('.recipe-disp').addEventListener('click' , (e) => {
 
       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
-         document.querySelector('.input-sec').innerHTML = '';
-         document.querySelector('.heading-div').innerHTML = '';
-         document.querySelector('.recipe-disp').innerHTML = '';
-         document.querySelector('.load-btn').innerHTML = '';
+         // document.querySelector('.input-sec').innerHTML = '';
+         // document.querySelector('.heading-div').innerHTML = '';
+         // document.querySelector('.recipe-disp').innerHTML = '';
+         // document.querySelector('.load-btn').innerHTML = '';
+         document.querySelector('.search-container').innerHTML = '';
 
          const contentID = e.target.parentNode.parentNode.id;
 
@@ -16,9 +17,7 @@ export function detailedInfo(info){
       }
 
       function displayDetails(arrInfo){
-
-   
-         let cautions, dietLabel, ingredient = '',healthLabel = '', i;
+         let cautions, dietLabel, ingredient = '',mealType ,cuisineType ,i;
 
          if(!arrInfo.cautions[0] || arrInfo.cautions[0] === 'FODMAP'){
             cautions = 'Not Available';
@@ -26,44 +25,84 @@ export function detailedInfo(info){
             cautions = arrInfo.cautions[0];
          }
 
-         if(!arrInfo.dietLabels){
+         if(!arrInfo.dietLabels[0]){
             dietLabel = 'Not Available';
          }else{
             dietLabel = arrInfo.dietLabels;
          }
 
-         for(i = 0; i < arrInfo.ingredientLines.length; i++){
-            ingredient += `
-               <li>${arrInfo.ingredientLines[i]}</li>
-            `;
+         if(!arrInfo.mealType){
+            mealType = 'Not Available';
+         }else{
+            mealType = arrInfo.mealType;
+         }
+   
+         if(!arrInfo.cuisineType){
+            cuisineType = 'Not Available';
+         }else{
+            cuisineType = arrInfo.cuisineType;
          }
 
-         for(i = 0; i < 5; i++){
-            healthLabel += `
-               <li class='healthLabels'>${arrInfo.healthLabels[i]}</li>
-            `
+         for(i = 0; i < arrInfo.ingredientLines.length; i++){ 
+            ingredient += ` <li>${arrInfo.ingredientLines[i]}</li> `;
          }
 
          document.querySelector('.search-container').innerHTML = `
             <div class='details'>
-               <div class='imgInfo'>
-                  <img src='${arrInfo.image}' class='detailsImg'/>
-                  <div>
-                     <h1 class='infoHead'>${arrInfo.label}</h1>
-                     <ul class='infos'>
-                        <li>Diet Label: ${dietLabel}</li>
-                        <li>Cautions : ${cautions}</li>
-                        <li>Calories: ${arrInfo.calories}</li>
-                        <li>Health Labels: ${healthLabel}</li>
-                     </ul>
+               <div class='heading'>
+                  <a class='back' href="search.html"><i class="fas fa-arrow-left"></i></a>
+                  <h1 class='info-head'>${arrInfo.label}</h1>
+               </div>
+               <div class='recipe-ingredients'>
+                  <img src='${arrInfo.image}' class='details-img'/>
+                  <div class='ingredients-sec'>
+                     <h1 class='ingr-title'>Ingredients:</h1>
+                     <ul class='ingredients'>${ingredient}</ul>
                   </div>
                </div>
-               <div class='ingredientSec'>
-                  <h1>Ingredients:</h1>
-                  <ul class='ingredients'>${ingredient}</ul>
-               </div>
-            </div>
+               <div class='add-info'>
+                  <ul class='infos'>
+                     <li>Cuisine Type:</li>
+                     <li class='tags'>${cuisineType}</li>
+                     <li>Meal Type:</li>
+                     <li class='tags'>${mealType}</li>
+                     <li>Diet Label:</li>
+                     <li class='tags'>${dietLabel}</li>
+                     <li>Cautions : </li>
+                     <li class='tags'>${cautions}</li>
+                     <li>Calories:</li>
+                     <li class='tags'>${arrInfo.calories}</li>
+                  </ul>
+                  <button class='view-more'>View More</button>
+               </div>  
+            </div> 
          `;
+
+         document.querySelector('.view-more').addEventListener('click' , (e) => {
+            document.querySelector('.view-more').style.display = 'none';
+            console.log(arrInfo);
+
+            let digest = '', healthLabel = '';
+
+            for(i = 0; i < 10; i++){
+               healthLabel += `
+                  <li class='tags arr-tags'>${arrInfo.healthLabels[i]}</li>
+               `
+            }
+
+            for(i = 0; i < 10; i++){
+               digest += `
+                  <li class='tags arr-tags'>${arrInfo.digest[i].label}: ${arrInfo.digest[i].total}${arrInfo.digest[i].unit}</li>
+               `;
+            }
+            
+            document.querySelector('.infos').innerHTML += `
+               <li>Health Labels:</li>
+               <ul class='array-item'>${healthLabel}</ul>
+               <li>Nutrients:</li>
+               <ul class='array-item'>${digest}</ul>
+            `;
+         });
       }
    });
 }

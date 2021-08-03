@@ -3,7 +3,6 @@
 section{
    
    .search-container{
-
       max-width: 1500px;
       min-height: 91.5vh;
       display: flex;
@@ -143,63 +142,126 @@ section{
       .details{
          width: 70%;
          margin-top: 1rem;
-         padding: 2rem 1rem; 
+         padding: 1.5rem 1rem; 
 
-         .imgInfo{
+         .heading{ 
             // border: 1px solid red;
+            padding: 0.5rem 1rem;
+            display: flex;
+            // justify-content: center;
+            // align-items: center;
+            margin: 0rem 1rem;
+            text-align: center;
+            color: $dark-color;
+   
+            a{
+               // width: 2.5rem;
+               // height: 2.5rem;
+               display: flex;
+               align-self: center;
+               padding: 0.5rem;
+               color: $dark-color;
+               font-size: 1.5rem;
+               border-radius: 50%;
+
+               &:hover{
+                  cursor: pointer;
+               }
+
+               &:active{
+                  color: $primary-color;
+                  background-color: $light-color;
+               }
+            }
+
+            .info-head{
+               width: 100%;
+               text-align: center;
+               font-size: 1.75rem;
+            }
+         }
+
+         .recipe-ingredients{
             display: grid;
             grid-template-columns: 1fr 2fr;
-            grid-gap: 2rem;
-            padding: 1rem;
+            grid-gap: 2.5rem;
+            padding: 1rem 2rem;
 
-            .detailsImg{
+            .details-img{
                display: flex;
                align-self: center;
                border-radius: 1.25rem;
-               // margin-bottom: 0.25rem;
+               // margin-bottom:0.25rem;
             }
 
-            .infoHead{
-               margin-bottom: 1.5rem;
-               font-size: 2rem;
-               text-align: center;
-               // font-family: $dancing-font;
+            .ingredients-sec{
+               border-radius: 2.5rem;
+               background-color: $light-color;
+               padding: 1rem 2rem;
+
+               .ingr-title{
+                  margin-bottom: 0.5rem;
+               }
+   
+               .ingredients{
+   
+                  li{
+                     padding-left: 1rem;
+   
+                     &:not(:last-child){
+                        margin-bottom: 0.25rem;
+                     }
+                  }
+               } 
+
             }
+   
+         }
+
+         .add-info{
+            margin-top: 1rem;
+            border-radius: 2.5rem;
+            background-color: $light-color;
+            padding: 1.5rem 2rem;
 
             .infos{
                background-color: $light-color;
                border-radius: 1.5rem;
-               padding: 1rem 2rem;
-
-               li:not(:last-child){
-                  margin-bottom: 0.25rem;
-               }
-
-               .healthLabels{
-                  margin-left: 2rem;
-               }
-            }
-         }
-
-         .ingredientSec{
-            margin-top: 1rem;
-            border-radius: 2.5rem;
-            background-color: $light-color;
-            padding: 1rem 2rem;
-
-            h1{
-               margin-bottom: 0.5rem;
-            }
-
-            .ingredients{
-               padding-left: 2rem;
+               // padding: 1rem;
 
                li{
-                  list-style: disc;
 
-                  &:not(:last-child){
-                     margin-bottom: 0.25rem;
+                  &.tags{
+                     display: inline-block;
+                     font-size: 0.9rem;
+                     margin: 0.15rem 0rem 0.5rem 1rem;
+                     padding:0.25rem 0.65rem;
+                     border-radius: 2rem;
+                     text-align: center;
+                     background-color: $secondary-color;
                   }
+               }
+            }
+
+            .view-more{
+               padding: 0.5rem 1rem;
+               margin-left: 1rem;
+               margin-top: 0.5rem;
+               outline: none;
+               color: $light-color;
+               background-color: $primary-color;
+               border: 1px solid $primary-color;
+               border-radius: 0.15rem;
+
+               &:hover{
+                  cursor: pointer;
+                  background-color: $secondary-color;
+                  border: 1px solid $secondary-color;
+               }
+
+               &:active{
+                  background-color: $dark-color;
+                  border: 1px solid $dark-color;
                }
             }
          }
