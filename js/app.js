@@ -6,7 +6,6 @@ import { detailedInfo } from "./imageInfo.js";
 const userInput = document.querySelector('.user-inp');
 const form = document.querySelector('.form-sec');
 const displaySec = document.querySelector('.recipe-disp');
-const foodName = userInput.value;
 
 const recipe = new Recipes;
 
@@ -51,7 +50,7 @@ form.addEventListener('submit' , (e) => {
             mealtype = info.mealType;
          }
    
-         if(info.cuisineType == undefined){
+         if(!info.cuisineType){
             cuisinetype = 'Not Available';
          }else{
             cuisinetype = info.cuisineType;

@@ -3,10 +3,7 @@ export function detailedInfo(info){
    document.querySelector('.recipe-disp').addEventListener('click' , (e) => {
 
       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
-         // document.querySelector('.input-sec').innerHTML = '';
-         // document.querySelector('.heading-div').innerHTML = '';
-         // document.querySelector('.recipe-disp').innerHTML = '';
-         // document.querySelector('.load-btn').innerHTML = '';
+
          document.querySelector('.search-container').innerHTML = '';
 
          const contentID = e.target.parentNode.parentNode.id;
@@ -44,7 +41,7 @@ export function detailedInfo(info){
          }
 
          for(i = 0; i < arrInfo.ingredientLines.length; i++){ 
-            ingredient += ` <li>${arrInfo.ingredientLines[i]}</li> `;
+            ingredient += ` <li class='ingredients-tag'>${arrInfo.ingredientLines[i]}</li> `;
          }
 
          document.querySelector('.search-container').innerHTML = `
@@ -54,10 +51,19 @@ export function detailedInfo(info){
                   <h1 class='info-head'>${arrInfo.label}</h1>
                </div>
                <div class='recipe-ingredients'>
-                  <img src='${arrInfo.image}' class='details-img'/>
+                  <div class='image-sec'>
+                     <img src='${arrInfo.image}' class='details-img'/>
+                     <button class='favorites'>Add to favorites</button>
+                  </div>
                   <div class='ingredients-sec'>
-                     <h1 class='ingr-title'>Ingredients:</h1>
-                     <ul class='ingredients'>${ingredient}</ul>
+                     <div>
+                        <h1 class='ingr-title'>Ingredients:</h1>
+                        <ul class='ingredients'>${ingredient}</ul>
+                     </div>
+                     <div class='full-recipe'>
+                        <p class='link-guide'>For full recipe:</p>
+                        <a href='${arrInfo.url}' target='_blank' class='recipe-link'>View Recipe</a>
+                     </div>
                   </div>
                </div>
                <div class='add-info'>

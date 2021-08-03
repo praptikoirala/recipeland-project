@@ -7,9 +7,8 @@ section{
       min-height: 91.5vh;
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       align-items: center;
-      // padding:2rem;
+      padding:1rem;
       background:rgba(170,216,211,0.75);
 
       .error-msg{
@@ -21,7 +20,6 @@ section{
          color: $light-color;
          background-color: $error-color;
          border-radius: 0.25rem;
-         // border: 0.05rem solid #fe3636;
       }
 
       .input-sec{
@@ -78,14 +76,9 @@ section{
       .heading-div{
          margin-top: 2.5rem;
          font-size: 0.8rem;
-
-         // h1{
-         //    text-align: left;
-         // }
       }
 
       .recipe-disp{
-         // border:1px solid red;
          padding: 1rem 2rem;
          margin: 0.5rem 2.5rem;
          display: grid;
@@ -95,7 +88,6 @@ section{
          .content{
 
             .recipe-img{
-               // height: 75%;
                display: flex;
                justify-content: center;
                overflow: hidden;
@@ -145,18 +137,13 @@ section{
          padding: 1.5rem 1rem; 
 
          .heading{ 
-            // border: 1px solid red;
             padding: 0.5rem 1rem;
             display: flex;
-            // justify-content: center;
-            // align-items: center;
             margin: 0rem 1rem;
             text-align: center;
             color: $dark-color;
    
             a{
-               // width: 2.5rem;
-               // height: 2.5rem;
                display: flex;
                align-self: center;
                padding: 0.5rem;
@@ -187,36 +174,113 @@ section{
             grid-gap: 2.5rem;
             padding: 1rem 2rem;
 
-            .details-img{
+            .image-sec{
                display: flex;
-               align-self: center;
-               border-radius: 1.25rem;
-               // margin-bottom:0.25rem;
+               flex-direction: column;
+               justify-content: center;
+
+               .details-img{
+                  display: flex;
+                  align-self: center;
+                  border-radius: 0.75rem;
+               }
+   
+               .favorites{
+                  display: inline-block;
+                  width: 100%;
+                  padding: 0.5rem;
+                  outline: none;
+                  border: 1px solid $primary-color;
+                  border-radius: 0.5rem;
+                  margin-top: 0.5rem;
+                  color: $light-color;
+                  background-color: $primary-color;
+   
+                  &:hover{
+                     cursor: pointer;
+                     background-color: $light-color;
+                     color: $primary-color;
+                     border: 1px solid $light-color;
+                  }
+   
+                  &:active{
+                     color: $light-color;
+                     background-color: $primary-color;
+                     border: 1px solid $primary-color;
+                  }
+               }
             }
 
             .ingredients-sec{
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
                border-radius: 2.5rem;
                background-color: $light-color;
-               padding: 1rem 2rem;
+               padding: 1.5rem 2rem;
 
                .ingr-title{
-                  margin-bottom: 0.5rem;
+                  margin-bottom: 0.75rem;
                }
    
                .ingredients{
    
                   li{
-                     padding-left: 1rem;
+                     // padding-left: 1rem;
+
+                     &.ingredients-tag{
+                        width: fit-content;
+                        font-size: 0.9rem;
+                        margin: 0.65rem 0rem 0.65rem 1rem;
+                        padding:0.5rem 0.75rem;
+                        border-radius: 2rem;
+                        text-align: center;
+                        background-color: lighten($secondary-color, 10%);
+                     }
    
                      &:not(:last-child){
                         margin-bottom: 0.25rem;
                      }
                   }
-               } 
+               }
+
+               .full-recipe{
+                  margin-top: 1rem;
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+
+                  .link-guide{
+                     font-size: 0.9rem;
+                     margin-bottom: 0.15rem;
+                  }
+                  
+                  .recipe-link{
+                     font-size: 0.85rem;
+                     padding: 0.5rem 1rem;
+                     border-radius: 0.5rem;
+                     margin-left: 0.5rem;
+                     outline: none;
+                     color: $dark-color;
+                     background-color: $secondary-color;
+                     border: 1px solid $secondary-color;
+
+                     &:hover{
+                        color: $light-color;
+                     }
+                     
+                     &:active{
+                        background-color: $dark-color;
+                        color: $light-color;
+                     }
+
+                  }
+               }
 
             }
    
          }
+
 
          .add-info{
             margin-top: 1rem;
@@ -227,14 +291,13 @@ section{
             .infos{
                background-color: $light-color;
                border-radius: 1.5rem;
-               // padding: 1rem;
 
                li{
 
                   &.tags{
                      display: inline-block;
                      font-size: 0.9rem;
-                     margin: 0.15rem 0rem 0.5rem 1rem;
+                     margin: 0.25rem 0rem 0.5rem 1rem;
                      padding:0.25rem 0.65rem;
                      border-radius: 2rem;
                      text-align: center;
@@ -248,15 +311,14 @@ section{
                margin-left: 1rem;
                margin-top: 0.5rem;
                outline: none;
-               color: $light-color;
-               background-color: $primary-color;
-               border: 1px solid $primary-color;
-               border-radius: 0.15rem;
+               color: $dark-color;
+               background-color: $secondary-color;
+               border: 1px solid $secondary-color;
+               border-radius: 0.5rem;
 
                &:hover{
                   cursor: pointer;
-                  background-color: $secondary-color;
-                  border: 1px solid $secondary-color;
+                  color: $light-color;
                }
 
                &:active{
