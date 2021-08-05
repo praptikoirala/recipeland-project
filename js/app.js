@@ -15,6 +15,8 @@ form.addEventListener('submit' , (e) => {
 
    const query = userInput.value;
 
+   document.querySelector('.details-container').style.display = 'none';
+
    if(query){
       userInput.value = '';
 

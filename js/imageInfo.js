@@ -1,10 +1,12 @@
+
 export function detailedInfo(info){
 
    document.querySelector('.recipe-disp').addEventListener('click' , (e) => {
 
       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
 
-         document.querySelector('.search-container').innerHTML = '';
+         document.querySelector('.search-container').style.display = 'none';
+         document.querySelector('.details-container').style.display = 'flex';
 
          const contentID = e.target.parentNode.parentNode.id;
 
@@ -44,10 +46,10 @@ export function detailedInfo(info){
             ingredient += ` <li class='ingredients-tag'>${arrInfo.ingredientLines[i]}</li> `;
          }
 
-         document.querySelector('.search-container').innerHTML = `
+         document.querySelector('.details-container').innerHTML = `
             <div class='details'>
                <div class='heading'>
-                  <a class='back' href="search.html"><i class="fas fa-arrow-left"></i></a>
+                  <a class='back'><i class="fas fa-arrow-left"></i></a>
                   <h1 class='info-head'>${arrInfo.label}</h1>
                </div>
                <div class='recipe-ingredients'>
@@ -83,6 +85,11 @@ export function detailedInfo(info){
                </div>  
             </div> 
          `;
+
+         document.querySelector('.back').addEventListener('click' , () => {
+            document.querySelector('.search-container').style.display = 'flex';
+            document.querySelector('.details-container').style.display = 'none';
+         });
 
          document.querySelector('.view-more').addEventListener('click' , (e) => {
             document.querySelector('.view-more').style.display = 'none';
