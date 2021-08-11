@@ -1,3 +1,4 @@
+import { getSignInUserID } from "../firebase/firestore.js";
 
 export function detailedInfo(info){
 
@@ -85,6 +86,11 @@ export function detailedInfo(info){
                </div>  
             </div> 
          `;
+
+         document.querySelector('.favorites').addEventListener('click' , () => {
+            console.log('hello');
+            console.log(getSignInUserID());
+         })
 
          document.querySelector('.back').addEventListener('click' , () => {
             document.querySelector('.search-container').style.display = 'flex';

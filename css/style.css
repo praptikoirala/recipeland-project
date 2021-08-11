@@ -27,17 +27,18 @@ ul li {
   text-align: center;
 }
 
-form .submit-btn {
+.submit-btn {
   font-family: 'Roboto', sans-serif;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
+  margin-top: 0.45rem;
+  padding: 0.25rem;
   background: #00adb5;
   border: 1px solid #00adb5;
   border-radius: 2px;
   font-size: 1.1rem;
+  text-align: center;
 }
 
-form .submit-btn:hover {
+.submit-btn:hover {
   cursor: pointer;
   background: #393e46;
   color: #00adb5;
@@ -73,7 +74,7 @@ form .submit-btn:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 2rem;
+  padding: 0rem 1.5rem;
 }
 
 .nav-bar .header {
@@ -108,11 +109,16 @@ form .submit-btn:hover {
   padding-left: 1.5rem;
 }
 
+.nav-bar .menu-items li.search-link, .nav-bar .menu-items li.favorites-link, .nav-bar .menu-items li.register-link {
+  display: none;
+}
+
 .nav-bar .menu-items li a {
   font-size: 1.1rem;
 }
 
 .nav-bar .menu-items li a i {
+  font-size: 1.25rem;
   padding-right: 0.5rem;
   align-self: center;
 }
@@ -121,9 +127,38 @@ form .submit-btn:hover {
   color: #393e46;
 }
 
-.nav-bar .menu-items .current {
+.nav-bar .menu-items li a.current {
   color: #393e46;
   text-decoration: underline;
+}
+
+.nav-bar .menu-items li.sign-out {
+  display: none;
+  font-size: 1.1rem;
+}
+
+.nav-bar .menu-items li.sign-out i {
+  font-size: 1.25rem;
+  padding-right: 0.5rem;
+  align-self: center;
+}
+
+.nav-bar .menu-items li.sign-out:hover {
+  color: #393e46;
+  cursor: pointer;
+}
+
+.nav-bar .menu-items .signin-user-name {
+  display: none;
+  color: #393e46;
+  padding: 1.75rem 0rem 1.75rem 0.5rem;
+  border-left: 0.15rem solid #eeeeee;
+  margin-left: 2rem;
+}
+
+.nav-bar .menu-items .signin-user-name .user-title {
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 .home-container {
@@ -168,7 +203,7 @@ form .submit-btn:hover {
 
 .home-container .welcome-sec .buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 0.75rem;
 }
 
@@ -224,7 +259,7 @@ section .form-container p a:hover {
 }
 
 section .form-container .form-box {
-  width: 30%;
+  min-width: 35%;
   margin: 0.85rem auto;
   padding: 1rem 2.5rem;
   background: #eeeeee;
@@ -263,7 +298,7 @@ section .form-container .form-box form p {
   height: 91.5vh;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   .nav-bar .sidemenu {
     display: inline-block;
     z-index: 20;
@@ -293,6 +328,7 @@ section .form-container .form-box form p {
     width: 35vw;
     padding: 0rem;
     background: #00adb5;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -308,6 +344,18 @@ section .form-container .form-box form p {
     padding: 1rem;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #aad8d3;
+  }
+  .nav-bar .menu-items .signin-user-name {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: none;
+    position: fixed;
+    top: 4.5rem;
+    margin: 0;
+    padding: 0.75rem;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -343,7 +391,7 @@ section .form-container .form-box form p {
 
 @media (max-width: 900px) {
   .nav-bar {
-    padding: 0rem 1.75rem;
+    padding: 0rem 2rem;
   }
   .nav-bar .header img {
     width: 35px;

@@ -28,9 +28,12 @@
   
       <ul class="menu-items">
         <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-        <li><a href="search.html" class="current"><i class="fas fa-search"></i>Search</a></li>
-        <li><a href="myfavorites.html"><i class="fas fa-heart"></i>My Favorites</a></li>
-        <li><a href="register.html"><i class="fas fa-sign-in-alt"></i>Register</a></li>
+        <li class="search-link"><a href="search.html" class="current"><i class="fas fa-search"></i>Search</a></li>
+        <li class="favorites-link"><a href="myfavorites.html"><i class="fas fa-heart"></i>My Favorites</a></li>
+        <li class="register-link"><a href="register.html"><i class="fas fa-sign-in-alt"></i>Register</a></li>
+        <li class="sign-out"><i class="fas fa-sign-in-alt"></i>Sign Out</li>
+
+        <p class="signin-user-name"></p>
       </ul>
   
     </nav>
@@ -73,9 +76,31 @@
     </div>
   </section>
 
-  <!-- <script src = "/js/recipes.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+  <script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyAjAfsUJJlWcwk3c9MyTGBwuw0sLbinMYo",
+    authDomain: "recipeland-8d239.firebaseapp.com",
+    projectId: "recipeland-8d239",
+    storageBucket: "recipeland-8d239.appspot.com",
+    messagingSenderId: "219802810606",
+    appId: "1:219802810606:web:2b1b2da465d289f60e1bff",
+    measurementId: "G-2XTB547FB0"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  
+  <script src="./js/navigation.js" type="module"></script>
+  <script src="./js/imageInfo.js" type="module"></script>
+  <script src="./firebase/firestore.js" type="module"></script>
+  <script src="./js/signin.js" type="module"></script>
   <script src="./js/hamburger.js"></script>
-  <!-- <script src="./js/renderRecipes.js" type="module"></script> -->
   <script src="./js/app.js" type="module"></script>
 
 </body>
