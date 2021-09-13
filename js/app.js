@@ -8,7 +8,7 @@ import { loadMore } from "./morerecipes.js";
 const userInput = document.querySelector('.user-inp');
 const form = document.querySelector('.form-sec');
 const displaySec = document.querySelector('.recipe-disp');
-const recipeDetailsSec = document.querySelector('.details-container');
+// const recipeDetailsSec = document.querySelector('.details-container');
 
 const recipe = new Recipes;
 
