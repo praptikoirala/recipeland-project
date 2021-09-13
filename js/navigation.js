@@ -14,7 +14,6 @@ export function hideNavLinks(){
 }
 
 export function showSignOut(){
-   console.log('hello');
    document.querySelector('.sign-out').style.display = 'inline-block';
 }
 

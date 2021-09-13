@@ -43,6 +43,7 @@ section{
             label{
                font-size:0.9rem;
                margin-bottom:0.25rem;
+               margin-top: 0.75rem;
             }
    
             input:not(.submit-btn){
@@ -51,7 +52,7 @@ section{
                border:1px solid $light-color;
                border-radius:2px;
                // margin-bottom: 0.25rem;(after adding javascript)
-               margin-bottom:0.5rem;
+               margin-bottom:0.25rem;
    
                &:focus:not(.submit-btn){
                   border:1px solid $primary-color;
@@ -59,8 +60,12 @@ section{
             }
    
             p{
-               margin-bottom: 0.5rem;
-               font-size: 0.75rem;  
+               // margin-bottom: 0.5rem;
+               font-size: 0.75rem; 
+               
+               &.error-msg{
+                  color: red;
+               }
             }
          }
       }

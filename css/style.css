@@ -67,6 +67,29 @@ ul li {
   border: 1px solid #eeeeee;
 }
 
+.search-container,
+.favorites-container {
+  max-width: 1500px;
+  min-height: 91.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0 1rem 0;
+  background: rgba(170, 216, 211, 0.75);
+}
+
+.search-container .recipe-disp,
+.search-container .favorites,
+.favorites-container .recipe-disp,
+.favorites-container .favorites {
+  width: 75%;
+  padding: 1rem 2rem;
+  margin: 0.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.5rem;
+}
+
 .nav-bar {
   background: #00adb5;
   color: #eeeeee;
@@ -152,13 +175,8 @@ ul li {
   display: none;
   color: #393e46;
   padding: 1.75rem 0rem 1.75rem 0.5rem;
-  border-left: 0.15rem solid #eeeeee;
+  text-transform: uppercase;
   margin-left: 2rem;
-}
-
-.nav-bar .menu-items .signin-user-name .user-title {
-  font-size: 1.1rem;
-  font-weight: bold;
 }
 
 .home-container {
@@ -275,6 +293,7 @@ section .form-container .form-box form {
 section .form-container .form-box form label {
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
+  margin-top: 0.75rem;
 }
 
 section .form-container .form-box form input:not(.submit-btn) {
@@ -282,7 +301,7 @@ section .form-container .form-box form input:not(.submit-btn) {
   outline: none;
   border: 1px solid #eeeeee;
   border-radius: 2px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 section .form-container .form-box form input:not(.submit-btn):focus:not(.submit-btn) {
@@ -290,8 +309,11 @@ section .form-container .form-box form input:not(.submit-btn):focus:not(.submit-
 }
 
 section .form-container .form-box form p {
-  margin-bottom: 0.5rem;
   font-size: 0.75rem;
+}
+
+section .form-container .form-box form p.error-msg {
+  color: red;
 }
 
 .form-container {
@@ -535,17 +557,8 @@ section .form-container .form-box form p {
   }
 }
 
-section .search-container {
-  max-width: 1500px;
-  min-height: 91.5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem 0 1rem 0;
-  background: rgba(170, 216, 211, 0.75);
-}
-
-section .search-container .error-msg {
+section .search-container .error-msg,
+section .favorites-container .error-msg {
   position: absolute;
   top: 4rem;
   display: none;
@@ -556,21 +569,24 @@ section .search-container .error-msg {
   border-radius: 0.25rem;
 }
 
-section .search-container .input-sec {
+section .search-container .input-sec,
+section .favorites-container .input-sec {
   width: 50%;
   display: flex;
   justify-content: center;
   margin-top: 2rem;
 }
 
-section .search-container .input-sec form {
+section .search-container .input-sec form,
+section .favorites-container .input-sec form {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-section .search-container .input-sec form input {
+section .search-container .input-sec form input,
+section .favorites-container .input-sec form input {
   background-color: #bfe2de;
   font-family: inherit;
   font-size: 1rem;
@@ -582,11 +598,13 @@ section .search-container .input-sec form input {
   margin-right: 0.5rem;
 }
 
-section .search-container .input-sec form input:focus {
+section .search-container .input-sec form input:focus,
+section .favorites-container .input-sec form input:focus {
   border-bottom: 0.15rem solid #00adb5;
 }
 
-section .search-container .loader {
+section .search-container .loader,
+section .favorites-container .loader {
   position: absolute;
   top: 15rem;
   display: none;
@@ -606,39 +624,40 @@ section .search-container .loader {
   }
 }
 
-section .search-container .heading-div {
+section .search-container .favorites-heading,
+section .favorites-container .favorites-heading {
+  margin: 1.5rem;
+}
+
+section .search-container .heading-div,
+section .favorites-container .heading-div {
   margin-top: 2.5rem;
   font-size: 0.8rem;
 }
 
-section .search-container .recipe-disp {
-  width: 75%;
-  padding: 1rem 2rem;
-  margin: 0.5rem 2.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2.5rem;
-}
-
-section .search-container .recipe-disp .content .recipe-img {
+section .search-container .recipe-disp .content .recipe-img,
+section .favorites-container .recipe-disp .content .recipe-img {
   display: flex;
   justify-content: center;
   overflow: hidden;
   margin-bottom: 0.75rem;
 }
 
-section .search-container .recipe-disp .content .recipe-img img {
+section .search-container .recipe-disp .content .recipe-img img,
+section .favorites-container .recipe-disp .content .recipe-img img {
   width: 100%;
   border-radius: 0.25rem;
 }
 
-section .search-container .recipe-disp .content .recipe-img img:hover {
+section .search-container .recipe-disp .content .recipe-img img:hover,
+section .favorites-container .recipe-disp .content .recipe-img img:hover {
   cursor: pointer;
   transform: scale(1.2);
   transition: transform 0.7s ease-in-out;
 }
 
-section .search-container .recipe-disp .content .recipe-info {
+section .search-container .recipe-disp .content .recipe-info,
+section .favorites-container .recipe-disp .content .recipe-info {
   text-align: center;
   border-radius: 0.25rem;
   padding: 0.5rem;
@@ -646,15 +665,18 @@ section .search-container .recipe-disp .content .recipe-info {
   background-color: #00adb5;
 }
 
-section .search-container .recipe-disp .content .recipe-info p:not(:last-child) {
+section .search-container .recipe-disp .content .recipe-info p:not(:last-child),
+section .favorites-container .recipe-disp .content .recipe-info p:not(:last-child) {
   margin-bottom: 0.25rem;
 }
 
-section .search-container .recipe-disp .content .recipe-info:hover {
+section .search-container .recipe-disp .content .recipe-info:hover,
+section .favorites-container .recipe-disp .content .recipe-info:hover {
   cursor: pointer;
 }
 
-section .search-container .load-btn .loadBtn {
+section .search-container .load-btn .loadBtn,
+section .favorites-container .load-btn .loadBtn {
   display: none;
   margin-bottom: 1.5rem;
 }
@@ -734,7 +756,7 @@ section .details-container .details .recipe-ingredients .image-sec .favorites {
   border: 1px solid #00adb5;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
-  color: #393e46;
+  color: #eeeeee;
   background-color: #00adb5;
 }
 
@@ -801,12 +823,14 @@ section .details-container .details .recipe-ingredients .ingredients-sec .full-r
 }
 
 section .details-container .details .recipe-ingredients .ingredients-sec .full-recipe .recipe-link:hover {
-  background-color: #00cad4;
-  border: 1px solid #00cad4;
+  color: #00adb5;
+  background-color: #3e434c;
+  border: 1px solid #3e434c;
 }
 
 section .details-container .details .recipe-ingredients .ingredients-sec .full-recipe .recipe-link:active {
-  background-color: #393e46;
+  background-color: #00adb5;
+  border-color: #00adb5;
   color: #eeeeee;
 }
 
@@ -844,11 +868,64 @@ section .details-container .details .add-info .view-more {
 }
 
 section .details-container .details .add-info .view-more:hover {
-  background-color: #00cad4;
-  border: 1px solid #00cad4;
+  color: #00adb5;
+  background-color: #3e434c;
+  border: 1px solid #3e434c;
 }
 
 section .details-container .details .add-info .view-more:active {
-  background-color: #393e46;
-  border: 1px solid #393e46;
+  background-color: #00adb5;
+  border-color: #00adb5;
+  color: #eeeeee;
+}
+
+section .favorites-container .favorites .favorite-list .image {
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+section .favorites-container .favorites .favorite-list .image img {
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+section .favorites-container .favorites .favorite-list .image img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 0.7s ease-in-out;
+}
+
+section .favorites-container .favorites .favorite-list .short-info {
+  text-align: center;
+  padding: 0.5rem;
+  color: #eeeeee;
+  background-color: #00adb5;
+}
+
+section .favorites-container .favorites .favorite-list .short-info p:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+section .favorites-container .favorites .favorite-list .short-info:hover {
+  cursor: pointer;
+}
+
+section .favorites-container .favorites .favorite-list .remove-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #eeeeee;
+  background: #393e46;
+  padding: 0.5rem;
+}
+
+section .favorites-container .favorites .favorite-list .remove-btn i {
+  font-size: 1.1rem;
+  margin-right: 0.25rem;
+}
+
+section .favorites-container .favorites .favorite-list .remove-btn:hover {
+  cursor: pointer;
+  background: #fe8888;
 }

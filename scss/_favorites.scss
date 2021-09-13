@@ -1,0 +1,64 @@
+@import 'variables';
+
+section{
+   .favorites-container{
+
+      .favorites{
+
+         .favorite-list{
+
+            .image{
+               // border: 1px solid red;
+               overflow: hidden;
+               margin-bottom: 0.75rem;
+
+               img{
+                  width: 100%;
+                  border-radius: 0.25rem;
+      
+                  &:hover{
+                     cursor: pointer;
+                     transform: scale(1.2);
+                     transition: transform 0.7s ease-in-out;
+                  }
+               }
+            }
+
+            .short-info{
+               text-align: center;
+               padding: 0.5rem;
+               color: $light-color;
+               background-color: $primary-color;
+
+               p:not(:last-child){
+                  margin-bottom: 0.25rem;
+               }
+
+               &:hover{
+                  cursor: pointer;
+               }
+            }
+
+            .remove-btn{
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               font-size: 1.1rem;
+               color: $light-color;
+               background: $dark-color;
+               padding: 0.5rem;
+
+               i{
+                  font-size: 1.1rem;
+                  margin-right: 0.25rem;
+               }
+
+               &:hover{
+                  cursor: pointer;
+                  background: lighten($error-color, 0.5%);
+               }
+            }
+         }
+      }
+   }
+}

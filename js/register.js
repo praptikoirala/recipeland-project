@@ -1,6 +1,7 @@
 import { createNewUser } from "../firebase/firestore.js";
+import { validateUserInput } from '../js/validation.js';
 
-document.querySelector('.signup-btn').addEventListener('click' , (e) => {
+document.querySelector('.signup-form').addEventListener('submit' , (e) => {
 
    e.preventDefault();
 
@@ -8,6 +9,9 @@ document.querySelector('.signup-btn').addEventListener('click' , (e) => {
    const inputLastName =  document.querySelector('.user-lastname').value; 
    const inputEmail = document.querySelector('.user-email').value;
    const inputPassword = document.querySelector('.user-password').value;
+   const inputRePassword = document.querySelector('.user-re-password').value;
 
    createNewUser({firstname : inputFirstName,lastname : inputLastName, email : inputEmail,password : inputPassword});
+
+   validateUserInput(inputFirstName, inputLastName,inputEmail, inputPassword, inputRePassword);
 })

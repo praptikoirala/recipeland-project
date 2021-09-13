@@ -12,58 +12,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RecipeLand | FAVORITES</title>
 </head>
-<body>
-  <header>
-    <nav class="nav-bar">
+  <body>
+    <header>
+      <nav class="nav-bar">
 
-      <div class="header">
-        <img src="/images/icon.jpg" alt="icon">
-        <h1><a href="index.html">RecipeLand</a></h1>
+        <div class="header">
+          <img src="/images/icon.jpg" alt="icon">
+          <h1><a href="index.html">RecipeLand</a></h1>
+        </div>
+    
+        <div class="sidemenu">
+          <i class="fas fa-bars fa-2x line"></i>
+          <i class="fas fa-times fa-2x cross"></i>
+        </div>
+    
+        <ul class="menu-items">
+          <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+          <li class="search-link"><a href="search.html"><i class="fas fa-search"></i>Search</a></li>
+          <li class="favorites-link"><a href="myfavorites.html" class="current"><i class="fas fa-heart"></i>My Favorites</a></li>
+          <li class="register-link"><a href="register.html"><i class="fas fa-sign-in-alt"></i>Register</a></li>
+          <li class="sign-out"><i class="fas fa-sign-in-alt"></i>Sign Out</li>
+
+          <p class="signin-user-name"></p>
+        </ul>
+    
+      </nav>
+    </header>
+
+    <section>
+      <div class="favorites-container">
+        <h1 class="favorites-heading">My Favorites</h1>
+
+        <div class="recipe-disp">
+
+        </div>
       </div>
-  
-      <div class="sidemenu">
-        <i class="fas fa-bars fa-2x line"></i>
-        <i class="fas fa-times fa-2x cross"></i>
+
+      <div class="details-container favorites-details-container">
+          
       </div>
-  
-      <ul class="menu-items">
-        <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
-        <li class="search-link"><a href="search.html"><i class="fas fa-search"></i>Search</a></li>
-        <li class="favorites-link"><a href="myfavorites.html" class="current"><i class="fas fa-heart"></i>My Favorites</a></li>
-        <li class="register-link"><a href="register.html"><i class="fas fa-sign-in-alt"></i>Register</a></li>
-        <li class="sign-out"><i class="fas fa-sign-in-alt"></i>Sign Out</li>
+    </section>
 
-        <p class="signin-user-name"></p>
-      </ul>
-  
-    </nav>
-  </header>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script>
+      var firebaseConfig = {
+      apiKey: "AIzaSyAjAfsUJJlWcwk3c9MyTGBwuw0sLbinMYo",
+      authDomain: "recipeland-8d239.firebaseapp.com",
+      projectId: "recipeland-8d239",
+      storageBucket: "recipeland-8d239.appspot.com",
+      messagingSenderId: "219802810606",
+      appId: "1:219802810606:web:2b1b2da465d289f60e1bff",
+      measurementId: "G-2XTB547FB0"
+      };
 
-  <script>
-    var firebaseConfig = {
-    apiKey: "AIzaSyAjAfsUJJlWcwk3c9MyTGBwuw0sLbinMYo",
-    authDomain: "recipeland-8d239.firebaseapp.com",
-    projectId: "recipeland-8d239",
-    storageBucket: "recipeland-8d239.appspot.com",
-    messagingSenderId: "219802810606",
-    appId: "1:219802810606:web:2b1b2da465d289f60e1bff",
-    measurementId: "G-2XTB547FB0"
-    };
+      firebase.initializeApp(firebaseConfig);
+    </script>
 
-    firebase.initializeApp(firebaseConfig);
-  </script>
+    <!-- <script src="/js/hamburger.js"></script> -->
+    <script src="./js/morerecipes.js" type="module"></script>
+    <script src="./js/renderingrecipe.js" type="module"></script>
+    <script src="./js/myfavorites.js" type="module"></script>
+    <script src="./js/navigation.js" type="module"></script>
+    <script src="./js/signin.js" type="module"></script>
+    <script src="./firebase/firestore.js" type="module"></script>
+    <script src="./js/hamburger.js"></script>
+    <script src="/js/app.js" type="module"></script>
 
-  <!-- <script src="/js/hamburger.js"></script> -->
-  <script src="./js/navigation.js" type="module"></script>
-  <script src="./js/signin.js" type="module"></script>
-  <script src="./firebase/firestore.js" type="module"></script>
-  <script src="./js/hamburger.js"></script>
-  <script src="/js/app.js"></script>
-
-</body>
+  </body>
 </html>

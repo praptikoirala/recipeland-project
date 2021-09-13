@@ -46,22 +46,22 @@
       <p>Already have an account?<a href="./signin.html">Sign in</a></p>
   
       <div class="form-box">
-        <form>
+        <form class="signup-form">
           <label for="name">FirstName</label>
           <input type="text" placeholder="Enter your first name" class="user-firstname">
-          <p class="error-msg"></p>
+          <p class="fname-error-msg error-msg"></p>
           <label for="name">LastName</label>
           <input type="text" placeholder="Enter your last name" class="user-lastname">
-          <p class="error-msg"></p>
+          <p class="lname-error-msg error-msg"></p>
           <label for="email">Email</label>
           <input type="text" placeholder="Enter your email" class="user-email">
-          <p class="error-msg"></p>
+          <p class="email-error-msg error-msg"></p>
           <label for="passsword">Password</label>
           <input type="password" placeholder="Enter your password" class="user-password">
-          <p class="error-msg"></p>
+          <p class="password-error-msg error-msg"></p>
           <label for="password">Retype-Password</label>
-          <input type="password" placeholder="Re-enter your password">
-          <p class="error-msg"></p>
+          <input type="password" placeholder="Re-enter your password" class="user-re-password">
+          <p class="repassword-error-msg error-msg"></p>
           <button type="submit" class="submit-btn signup-btn">Register</button>
         </form>
       </div>
@@ -91,6 +91,8 @@
   <script src="./js/navigation.js" type="module"></script>
   <script src="./js/signin.js" type="module"></script>
   <script src="./firebase/firestore.js" type="module"></script>
+  <script src="./js/validationdetails.js" type="module"></script>
+  <script src="./js/validation.js" type="module"></script>
   <script src="./js/register.js" type="module"></script>
   <script src="./js/hamburger.js"></script>
   <script src="/js/app.js"></script>
