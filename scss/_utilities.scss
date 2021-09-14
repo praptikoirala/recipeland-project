@@ -80,13 +80,15 @@ ul{
 //displaySec(search&favorites)
 .search-container,
 .favorites-container{
-   max-width: 1500px;
+   max-width: 2500px;
+   // width: fit-content;
    min-height: 91.5vh;
    display: flex;
    flex-direction: column;
    align-items: center;
    padding:1.5rem 0 1rem 0;
    background:rgba(170,216,211,0.75);
+
 
    .recipe-disp,
    .favorites{
@@ -97,4 +99,15 @@ ul{
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 2.5rem;
    }
+}
+
+.block-error-msg{
+   position: absolute;
+   top: 4rem;
+   display: none;
+   font-size: 0.9rem;
+   padding: 0.5rem 1rem;
+   color: $light-color;
+   background-color: $dark-color;
+   border-radius: 0.25rem;
 }

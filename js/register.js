@@ -2,7 +2,6 @@ import { createNewUser } from "../firebase/firestore.js";
 import { validateUserInput } from '../js/validation.js';
 
 document.querySelector('.signup-form').addEventListener('submit' , (e) => {
-
    e.preventDefault();
 
    const inputFirstName =  document.querySelector('.user-firstname').value; 

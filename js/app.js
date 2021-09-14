@@ -21,16 +21,19 @@ form.addEventListener('submit' , (e) => {
    document.querySelector('.details-container').style.display = 'none';
 
    if(query){
-      document.querySelector('.heading-div').innerHTML = '';
+
       document.querySelector('.loadBtn').style.display = 'none';
       displaySec.innerHTML = '';
       userInput.value = '';
+      const resultMessage = document.querySelector('.heading-div');
 
+      resultMessage.innerHTML = '';
+     
       recipe.displayResult(query, 2, 14)
          .then(data => {
             const recipes = data.hits.map(hit => hit.recipe);
 
-            document.querySelector('.heading-div').innerHTML = `<h1 class='result-head'>Search results for '${query}':</h1>`;
+            resultMessage.innerHTML = `<h1 class='result-head'>Search results for '${query}':</h1>`;
 
             displaySec.innerHTML = renderRecipes(recipes);
 
@@ -38,11 +41,13 @@ form.addEventListener('submit' , (e) => {
 
             loadMore(data, query);
 
-
-         });
+         })
+         // .catch(error){
+         //    resultMessage.innerHTML = `<h1 class='result-head'>Something went wrong</h1>`;
+         // };
 
    }else{
-      showError();
+      showError('Nothing to search...');
    }
 
 });

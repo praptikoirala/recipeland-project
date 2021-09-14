@@ -1,5 +1,5 @@
 import { Recipes } from "./recipes.js";
-import { renderRecipes } from "./renderingrecipe.js";
+import { renderRecipes, detailedInfo } from "./renderingrecipe.js";
 
 const recipe = new Recipes;
 const displaySec = document.querySelector('.recipe-disp');
@@ -19,21 +19,17 @@ export function loadMore(moreRecipes, userQuery){
    }
    
    document.querySelector('.loadBtn').addEventListener('click' , () => {  
-      
-      // let from = data.to + 1,
-      //     to = data.to + 11;
 
-
-      recipe.displayResult(food, result.to + 1, result.to + 11)
+      recipe.displayResult(food, result.to + 1, result.to + 10)
          .then( (data) => {
-
-            console.log(data);
 
             result.to = data.to;
 
-            console.log(displaySec);
+            const recipe = data.hits.map( hit => hit.recipe);
 
-            displaySec.innerHTML = renderRecipes(data.hits.map( hit => hit.recipe));
+            displaySec.innerHTML = renderRecipes(recipe);
+            
+            detailedInfo(data);
          });
 
    });

@@ -1,4 +1,5 @@
 import { hideNavLinks, showNavLinks , hideSignOut } from "../js/navigation.js";
+import { showError } from "../js/validationdetails.js";
 // import { validateRegisteredEmailPassword } from "../js/signin.js";
 
 const firestore = firebase.firestore();
@@ -23,17 +24,22 @@ export const getSignInUserID = () => {
 }
 
 export const createNewUser = async (userInputs) => {
-   const result = await auth.createUserWithEmailAndPassword(userInputs.email, userInputs.password); 
-   
-   // console.log(result);
+
+   try {
+      const result = await auth.createUserWithEmailAndPassword(userInputs.email, userInputs.password); 
+   } catch(error) {
+      const errMessage = error.code;
+
+      if(errMessage == "auth/email-already-in-use"){
+         showError('email', '*'+ errMessage);
+      }
+   }
 
    if (result.user) {
       const userDocumentRef = await firestore.collection("ProjectUsers").doc(result.user.uid).get();
 
       if (!userDocumentRef.exists) {
           await firestore.collection("ProjectUsers").doc(result.user.uid).set({ ...userInputs, userID: result.user.uid });
-
-         //  getRegisteredEmailPassword(result.user.uid);
          window.location.href = "./search.html";
       }
    }
@@ -41,11 +47,19 @@ export const createNewUser = async (userInputs) => {
 }
 
 export const signUserIn = async (email, password) => {
-   const inputs = await auth.signInWithEmailAndPassword(email, password);
 
-   window.location.href = "./search.html";
+   try{
+      await auth.signInWithEmailAndPassword(email, password);
+      window.location.href = "./search.html";
+   }catch(error){
+      const errMessage = error.code;
 
-   console.log(inputs);
+      if(errMessage == 'auth/wrong-password'){
+         showError('password', '*'+errMessage);
+         showError('email' , '*invalid email');
+      }
+   }
+
 }
 
 export const signUserOut = async () => {
@@ -57,12 +71,15 @@ export const signUserOut = async () => {
 }
 
 const getUserName = async (userId) => {
-   const result = await firestore.collection("ProjectUsers").doc(userId).get();
+   try{
+      const result = await firestore.collection("ProjectUsers").doc(userId).get();
+      const fName = result.data().firstname;
+      const lName = result.data().lastname;
 
-   const fName = result.data().firstname;
-   const lName = result.data().lastname;
-
-   displayUserName(fName , lName);
+      displayUserName(fName , lName);
+   }catch(error){
+      document.querySelector('.signin-user-name').innerText = 'Loading...';
+   }
 }
 
 function displayUserName(firstname, lastname){
@@ -72,12 +89,3 @@ function displayUserName(firstname, lastname){
 
    document.querySelector('.signin-user-name').style.display = 'flex';
 }
-
-// async function getRegisteredEmailPassword(userId){
-//    const result = await firestore.collection("ProjectUsers").doc(userId).get();
-
-//    const email = result.data().email;
-//    const password = result.data().password;
-
-//    validateRegisteredEmailPassword(email, password);
-// }

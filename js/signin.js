@@ -1,6 +1,5 @@
-import { signUserIn} from "../firebase/firestore.js";
+import { signUserIn } from "../firebase/firestore.js";
 import { validateRegisteredInput } from "../js/validation.js";
-// import { showError } from "./validationdetails.js";
 
 document.querySelector('.signin-form').addEventListener('submit' , (e) => {
 
@@ -12,10 +11,6 @@ document.querySelector('.signin-form').addEventListener('submit' , (e) => {
    signUserIn(userEmail, userPassword);
 
    validateRegisteredInput(userEmail, userPassword);
-
-   // export function validateRegisteredEmailPassword(email, password){
-
-   // }
 });
 
 

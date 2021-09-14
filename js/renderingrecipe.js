@@ -37,7 +37,6 @@ export function renderRecipes(recipe){
 }
 
 export function detailedInfo(info){
-
    document.querySelector('.recipe-disp').addEventListener('click' , (e) => {
 
       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
@@ -95,6 +94,7 @@ export function displayDetails(recipe){
 
    output += `
       <div class='details'>
+
          <div class='heading'>
             <a class='back'><i class="fas fa-arrow-left"></i></a>
             <h1 class='info-head'>${recipe.label}</h1>

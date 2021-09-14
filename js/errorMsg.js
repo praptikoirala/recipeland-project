@@ -1,6 +1,7 @@
-const errorMsg = document.querySelector('.error-msg');
+const errorMsg = document.querySelector('.block-error-msg');
 
-export function showError(){
+export function showError(errMessage){
+  errorMsg.innerText = errMessage;
   errorMsg.style.display = 'block';
 
    setTimeout( () => {

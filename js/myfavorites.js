@@ -3,12 +3,16 @@ const firestore = firebase.firestore();
 import { getSignInUserID } from "../firebase/firestore.js";
 import { getRecipe, innerDetails } from "./imageInfo.js";
 import { displayDetails, renderRecipes} from "./renderingrecipe.js";
+import { showLoader, hideLoader } from "./loader.js";
 
 const favoritesSec = document.querySelector('.recipe-disp'); 
+
+showLoader();
 
 document.querySelector('.favorites-container').addEventListener("click", displayFavoriteRecipes);
 
 function displayFavoriteRecipes(){
+
    let result = '';
 
    const userID = getSignInUserID();
@@ -22,10 +26,12 @@ function displayFavoriteRecipes(){
 
       result += renderRecipes(recipes);
 
+      hideLoader();
+
       favoritesSec.innerHTML = result;
 
    })
-   
+
    favoritesSec.addEventListener('click' , (e) => {
 
       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
@@ -35,12 +41,17 @@ function displayFavoriteRecipes(){
 
          const result = getRecipe(recipes, e);
 
-         const favoriteRecipeDetails = document.querySelector('.favorites-details-container')
-         
+         const favoriteRecipeDetails = document.querySelector('.favorites-details-container');
+
+         hideLoader();
+
          favoriteRecipeDetails.innerHTML = displayDetails(result);
    
          innerDetails(result);
       }
 
    })
+
 }
+  
+  

@@ -1,15 +1,22 @@
 import { getSignInUserID } from "../firebase/firestore.js";
-import { detailedInfo } from "./renderingrecipe.js";
+import { showError } from "./errorMsg.js";
 
 const firestore = firebase.firestore();
 
-export async function addToFavorites(recipe, e){
+export async function addToFavorites(recipe){
+   console.log('hello');
 
    const signInUserId = getSignInUserID();
-   
-   await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").add(recipe); 
-   
-   await renderFavoritesButton(recipe.uri);
+
+   try {
+      await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").add(recipe); 
+
+      renderFavoritesButton(recipe.uri).then(data => {
+         document.querySelector('.buttons').innerHTML = data;
+      });
+   } catch (error) {
+      // document.querySelector('.favorites').innerText = 'Something went wrong';
+   }  
 }
 
 export function getRecipe(recipes, e) {
@@ -21,32 +28,33 @@ export function getRecipe(recipes, e) {
 }
 
 export async function renderFavoritesButton(uri) {
-   let button = "";
+   let button = '' ;
+
+   // button += `<button class='favorites loading-favorites-button' disabled>Loading...</button>`;
 
    const firestore = firebase.firestore();
    const signInUserId = getSignInUserID();
 
    const result = await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").where("uri", "==", uri).get();
 
-   if (result.docs.length > 0) {
-      button += `<button class='favorites remove-to-favorites'>Remove from favorites</button>`;
-      document.querySelector('.buttons').innerHTML = button;
-   } else {
-      button += `<button class='favorites add-from-favorites'>Add to favorites</button>`;
-      document.querySelector('.buttons').innerHTML = button;
-   }
-
+      if (result.docs.length > 0) {
+         button += `<button class='favorites remove-from-favorites'>Remove from favorites</button>`;
+      }
+      else{
+         button += `<button class='favorites add-to-favorites'>Add to favorites</button>`;
+      }
    return button;
 }
 
 export function innerDetails(recipe){
 
-   document.querySelector('.buttons').addEventListener('click' , (e) => {
-      addToFavorites(recipe, e);
+   document.querySelector('.buttons').addEventListener('click' , () => {
+      addToFavorites(recipe);
+      showError('Added to favorites');
    });
 
    document.querySelector('.back').addEventListener('click' , () => {
-      document.querySelector('.search-container').style.display = 'flex';
+      document.querySelector('.recipes-container').style.display = 'flex';
       document.querySelector('.details-container').style.display = 'none';
    });
 
