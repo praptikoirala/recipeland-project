@@ -4,7 +4,6 @@ section{
    
    .search-container,
    .favorites-container{
-
       .input-sec{
          width:50%;
          display: flex;
@@ -125,9 +124,13 @@ section{
       background:rgba(170,216,211,0.75);
       
       .details{
-         width: 70%;
+         width: 75%;
          margin-top: 1rem;
          padding: 1.5rem 1rem; 
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         // align-items: center;
 
          .heading{ 
             padding: 0.5rem 1rem;

@@ -50,7 +50,7 @@ export function innerDetails(recipe){
 
    document.querySelector('.buttons').addEventListener('click' , () => {
       addToFavorites(recipe);
-      showError('Added to favorites');
+      showError("Added to favorites");
    });
 
    document.querySelector('.back').addEventListener('click' , () => {

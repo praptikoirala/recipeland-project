@@ -1,11 +1,13 @@
-const errorMsg = document.querySelector('.block-error-msg');
-
 export function showError(errMessage){
-  errorMsg.innerText = errMessage;
-  errorMsg.style.display = 'block';
+
+  const errorMsgContainer = document.querySelector('.block-error-msg');
+
+  errorMsgContainer.style.display = 'block';
+
+  errorMsgContainer.innerText = errMessage;
 
    setTimeout( () => {
-     errorMsg.style.display = 'none';
+     errorMsgContainer.style.display = 'none';
    } , 2000);
 
 }

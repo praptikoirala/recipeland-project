@@ -90,8 +90,11 @@ ul li {
   grid-gap: 2.5rem;
 }
 
-.block-error-msg {
+.search-container .block-error-msg,
+.details-container .block-error-msg {
   position: absolute;
+  display: flex;
+  align-self: center;
   top: 4rem;
   display: none;
   font-size: 0.9rem;
@@ -691,9 +694,12 @@ section .details-container {
 }
 
 section .details-container .details {
-  width: 70%;
+  width: 75%;
   margin-top: 1rem;
   padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 section .details-container .details .heading {

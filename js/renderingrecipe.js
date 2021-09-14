@@ -93,8 +93,10 @@ export function displayDetails(recipe){
    });
 
    output += `
-      <div class='details'>
-
+      <div class='details'> 
+         <div class="block-error-msg">
+              
+         </div>
          <div class='heading'>
             <a class='back'><i class="fas fa-arrow-left"></i></a>
             <h1 class='info-head'>${recipe.label}</h1>

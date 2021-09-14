@@ -101,13 +101,19 @@ ul{
    }
 }
 
-.block-error-msg{
-   position: absolute;
-   top: 4rem;
-   display: none;
-   font-size: 0.9rem;
-   padding: 0.5rem 1rem;
-   color: $light-color;
-   background-color: $dark-color;
-   border-radius: 0.25rem;
+.search-container,
+.details-container{
+
+   .block-error-msg{
+      position: absolute;
+      display: flex;
+      align-self: center;
+      top: 4rem;
+      display: none;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      color: $light-color;
+      background-color: $dark-color;
+      border-radius: 0.25rem;
+   }
 }

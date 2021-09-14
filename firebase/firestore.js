@@ -27,20 +27,21 @@ export const createNewUser = async (userInputs) => {
 
    try {
       const result = await auth.createUserWithEmailAndPassword(userInputs.email, userInputs.password); 
+
+      if (result.user) {
+         const userDocumentRef = await firestore.collection("ProjectUsers").doc(result.user.uid).get();
+   
+         if (!userDocumentRef.exists) {
+             await firestore.collection("ProjectUsers").doc(result.user.uid).set({ ...userInputs, userID: result.user.uid });
+            window.location.href = "./search.html";
+         }
+      }
+
    } catch(error) {
       const errMessage = error.code;
 
       if(errMessage == "auth/email-already-in-use"){
          showError('email', '*'+ errMessage);
-      }
-   }
-
-   if (result.user) {
-      const userDocumentRef = await firestore.collection("ProjectUsers").doc(result.user.uid).get();
-
-      if (!userDocumentRef.exists) {
-          await firestore.collection("ProjectUsers").doc(result.user.uid).set({ ...userInputs, userID: result.user.uid });
-         window.location.href = "./search.html";
       }
    }
 
