@@ -8,7 +8,7 @@ section{
          width:50%;
          display: flex;
          justify-content: center;
-         margin-top: 2rem;
+         margin-top: 1.25rem;
 
          form{
             width:100%;
@@ -60,6 +60,7 @@ section{
       }
 
       .heading-div{
+         width: fit-content;
          margin-top: 2.5rem;
          font-size: 0.8rem;
       }
@@ -67,6 +68,7 @@ section{
       .recipe-disp{
 
          .content{
+            height: 100%;
 
             .recipe-img{
                display: flex;
@@ -120,28 +122,35 @@ section{
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding:1.5rem;
+      padding: 1rem 1.5rem;
       background:rgba(170,216,211,0.75);
       
       .details{
-         width: 75%;
+         width: 70%;
          margin-top: 1rem;
-         padding: 1.5rem 1rem; 
+         padding: 0.75rem 1rem; 
          display: flex;
          flex-direction: column;
          justify-content: center;
          // align-items: center;
 
+         .inner-heading{
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+         }
+
          .heading{ 
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 1.5rem;
             display: flex;
-            margin: 0rem 1rem;
+            justify-content: center;
+            align-items: center;
             text-align: center;
             color: $dark-color;
    
             a{
-               display: flex;
-               align-self: center;
+               // border: 1px solid red;
+               // display: flex;
+               // align-self: center;
                padding: 0.5rem;
                color: $dark-color;
                font-size: 1.5rem;
@@ -158,6 +167,7 @@ section{
             }
 
             .info-head{
+               margin-left: 1rem;
                width: 100%;
                text-align: center;
                font-size: 1.75rem;
@@ -166,21 +176,23 @@ section{
 
          .recipe-ingredients{
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-gap: 2.5rem;
-            padding: 1rem 2rem;
-
+            grid-template-columns: 1fr 1.5fr;
+            grid-gap: 1.5rem;
+            padding: 1rem 1.5rem;
+   
             .image-sec{
                display: flex;
                flex-direction: column;
                justify-content: center;
 
                .details-img{
-                  display: flex;
-                  align-self: center;
+                  width: 100%;
+                  // display: flex;
+                  // align-self: center;
                   border-radius: 0.75rem;
                }
    
+              .buttons{
                .favorites{
                   display: inline-block;
                   width: 100%;
@@ -205,6 +217,7 @@ section{
                      border: 1px solid $primary-color;
                   }
                }
+              }
             }
 
             .ingredients-sec{
@@ -214,15 +227,10 @@ section{
                border-radius: 2.5rem;
                background-color: $light-color;
                padding: 1.5rem 2rem;
-
-               .ingr-title{
-                  margin-bottom: 0.75rem;
-               }
    
                .ingredients{
    
                   li{
-                     // padding-left: 1rem;
 
                      &.ingredients-tag{
                         width: fit-content;
@@ -230,7 +238,6 @@ section{
                         margin: 0.65rem 0rem 0.65rem 1rem;
                         padding:0.5rem 1.2rem;
                         border-radius: 2rem;
-                        // text-align: center;
                         background-color: lighten($secondary-color, 10%);
                      }
    
@@ -252,7 +259,7 @@ section{
                   }
                   
                   .recipe-link{
-                     font-size: 0.85rem;
+                     font-size: 0.95rem;
                      padding: 0.5rem 1rem;
                      border-radius: 0.5rem;
                      margin-left: 0.5rem;

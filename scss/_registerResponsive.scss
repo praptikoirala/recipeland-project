@@ -1,0 +1,62 @@
+@import 'variables';
+
+@media(max-width:1020px){
+   section{
+
+      .form-container{
+
+         .form-box{
+            min-width: 45%;
+         }
+      }
+   }
+}
+
+@media(max-width:920px){
+   section{
+
+      .form-container{
+
+         .form-box{
+            min-width: 55%;
+         }
+      }
+   }
+}
+
+
+@media(max-width:750px){
+   section{
+
+      .form-container{
+
+         .form-box{
+            min-width: 65%;
+         }
+      }
+   }
+}
+
+@media(max-width:650px){
+   section{
+
+      .form-container{
+
+         .form-box{
+            min-width: 65%;
+         }
+      }
+   }
+}
+
+@media(max-width:475px){
+   section{
+
+      .form-container{
+
+         .form-box{
+            min-width: 75%;
+         }
+      }
+   }
+}

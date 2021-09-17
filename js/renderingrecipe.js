@@ -111,7 +111,7 @@ export function displayDetails(recipe){
             </div>
             <div class='ingredients-sec'>
                <div>
-                  <h1 class='ingr-title'>Ingredients:</h1>
+                  <h1 class='inner-heading'>Ingredients:</h1>
                   <ul class='ingredients'>${ingredient}</ul>
                </div>
                <div class='full-recipe'>
@@ -122,6 +122,7 @@ export function displayDetails(recipe){
          </div>
 
          <div class='add-info'>
+            <h1 class='inner-heading'>Health Labels:</h1>
             <ul class='infos'>
                <li>Cuisine Type:</li>
                <li class='tags'>${cuisineType}</li>

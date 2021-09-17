@@ -1,0 +1,439 @@
+@import 'variables';
+
+//Responsive for search section
+@media(max-width: 950px){
+
+   section{
+      
+      .search-container,
+      .favorites-container{
+         .input-sec{
+            margin-top: 1.75rem;
+
+            form{
+   
+               input{
+                  width: 55%;
+               }
+            }
+         }
+
+         .loader{
+            height: 3.25rem;
+            width: 3.25rem;
+         }
+
+         .heading-div{
+            margin-top: 2rem;
+         }
+
+         .load-btn{
+
+            .loadBtn{
+               margin-bottom: 1rem;
+            }
+         }
+
+      }
+
+   }
+
+}
+
+@media(max-width: 750px){
+   .search-container,
+   .favorites-container{
+      .input-sec{
+
+         form{
+
+            input{
+               width: 65%;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 550px){
+   section{
+   
+      .search-container,
+      .favorites-container{
+         .input-sec{
+            margin-top: 1rem;
+            width: 75%;
+
+            form{
+               
+               input{
+                  font-size: 0.85rem;
+               }
+            }
+         }
+   
+         .heading-div{
+            margin-top: 1.75rem;
+            font-size: 0.7rem;
+         }
+   
+         .load-btn{
+   
+            .loadBtn{
+               margin-bottom: 0.5rem;
+            }
+         }
+   
+      }
+   }
+}
+
+//Responsive for inner details
+@media(max-width: 1300px){
+   section{
+      .details-container{
+      
+         .details{
+            width: 80%;
+   
+            .recipe-ingredients{
+               grid-template-columns: 1.5fr 2fr;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 1150px){
+   section{
+
+      .details-container{
+         .details{
+            width: 90%;
+         
+            .heading{ 
+         
+               .info-head{
+                  font-size: 1.55rem;
+               }
+            } 
+            
+            .recipe-ingredients{
+               grid-template-columns: 1.75fr 2.25fr;
+            }
+         }     
+               
+      }
+   } 
+}
+
+@media(max-width: 950px){
+   section{
+      .details-container{
+         
+         .details{
+            width: 70%;
+
+            .inner-heading{
+               font-size: 1.35rem;
+            }
+      
+            .heading{ 
+      
+               .info-head{
+                  font-size: 1.45rem;
+               }
+            }  
+            
+            .recipe-ingredients{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               padding: 1rem 0.5rem;
+      
+               .image-sec{
+                  width:100%;
+   
+                  .details-img{
+                     display: flex;
+                     align-self: center;
+                     width: 70%;
+                  }
+      
+                  .buttons{
+                     display: flex;
+                     justify-content: center;
+
+                     .favorites{
+                        width: 70%;
+                     }
+                  }
+               }
+   
+               .ingredients-sec{
+                  padding: 1.5rem;
+      
+                  .ingredients{
+                     display: flex;
+                     flex-wrap: wrap;
+                     
+                     li{
+
+                        &.ingredients-tag{
+                           margin: 0.25rem;
+                        }
+                     }
+                  }
+   
+               }
+      
+            }
+
+            .add-info{
+               padding: 1.5rem;
+
+               .infos{
+   
+                  li{
+                     margin: 0.25rem;
+   
+                     &.tags{
+                        margin: 0.25rem;
+                     }
+                  }
+               }
+            }
+           
+         }
+      }
+   }
+}
+
+@media(max-width: 875px){
+   section{
+      .details-container{   
+         .details{
+
+            .recipe-ingredients{
+
+               .ingredients-sec{
+
+                  .full-recipe{
+                     
+                     .recipe-link{
+                        font-size: 0.85rem;
+                        padding: 0.35rem 0.75rem;
+                     }
+                  }
+               }
+      
+            }
+
+            .add-info{
+
+               .view-more{
+                  padding: 0.35rem 0.75rem;
+                  font-size: 0.85rem;
+               }
+            }
+         }
+      
+      }
+   }
+}
+
+@media(max-width: 775px){
+   section{
+      .details-container{
+         .details{
+            width: 80%;
+
+            .inner-heading{
+               font-size: 1.15rem;
+            }
+      
+            .heading{ 
+      
+               .info-head{
+                  font-size: 1.25rem;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 675px){
+   section{
+      .details-container{   
+         .details{
+            width: 85%;
+
+            .recipe-ingredients{
+      
+               .image-sec{
+   
+                  .details-img{
+                     width: 80%;
+                  }
+      
+                  .buttons{
+
+                     .favorites{
+                        width: 80%;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 575px){
+   section{
+      .details-container{   
+         .details{
+            width: 100%;
+         }
+      }
+   }
+}
+
+@media(max-width: 500px){
+   section{
+      .details-container{   
+         .details{
+            margin-top: 0.1rem;
+            padding: 0.25rem 0.85rem;
+
+            .inner-heading{
+               font-size: 1rem;
+            }
+
+            .heading{ 
+               padding: 0.5rem 0.75rem;
+
+               a{
+                  font-size: 1.25rem;
+               }
+      
+               .info-head{
+                  margin-left: 0.5rem;
+                  font-size: 1.05rem;
+               }
+            }
+
+            .recipe-ingredients{
+      
+               .image-sec{
+   
+                  .details-img{
+                     width: 90%;
+                  }
+      
+                  .buttons{
+
+                     .favorites{
+                        width: 90%;
+                     }
+                  }
+               }
+
+               .ingredients-sec{
+      
+                  .ingredients{
+                     
+                     li{
+
+                        &.ingredients-tag{
+                           font-size: 0.8rem;
+                           padding: 0.35rem 0.75rem;
+                        }
+                     }
+                  }
+
+                  .full-recipe{
+
+                     .link-guide{
+                        font-size: 0.8rem;
+                     }
+
+                     .recipe-link{
+                        font-size: 0.8rem;
+                        padding: 0.35rem 0.65rem;
+                     }
+                  }
+   
+               }
+            }
+
+            .add-info{
+               .infos{
+
+                  li{
+                     font-size: 0.9rem;
+                     margin: 0.15rem;
+
+                     &.tags{
+                        margin: 0.15rem;
+                        font-size: 0.8rem;
+                     }
+                  }
+               }
+
+               .view-more{
+                  font-size: 0.8rem;
+                  padding: 0.35rem 0.65rem;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 350px){
+   section{
+      .details-container{
+         padding: 1rem 0.75rem;
+         
+         .details{  
+            
+            .recipe-ingredients{
+               width:100%;
+
+               .heading{
+                  .info-head{
+                     font-size: 1.01rem;
+                  }
+               }
+      
+               .image-sec{
+                  width:100%;
+   
+                  .details-img{
+                     width: 100%;
+                  }
+      
+                  .buttons{
+
+                     .favorites{
+                        width: 100%;
+                     }
+                  }
+               }
+   
+               .ingredients-sec{
+                  padding: 1.25rem;
+               }
+      
+            }
+
+            .add-info{
+               padding: 1.25rem;
+            }
+           
+         }
+      }
+   }
+}

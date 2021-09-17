@@ -46,7 +46,8 @@
 @media(max-width:625px){
    .home-container{
    
-      .welcome-sec{
+      .welcome-sec{ 
+         padding: 1rem;
    
          h1{
             font-size:3rem;
@@ -89,7 +90,7 @@
    }
 
 
-@media(max-width:425px){
+@media(max-width:430px){
       .home-container{
          height:92.5vh;
 
@@ -98,16 +99,16 @@
          }
    
          .welcome-sec{
-            padding:1.85rem;
+            padding: 0.5rem;
       
             h1{
-               font-size:2.35rem;
-               margin-bottom:0.15rem;
+               font-size: 2.5rem;
+               margin-bottom: 0.2rem;
             }
    
             p{
-               font-size:1rem;
-               margin-bottom:0.5rem;
+               font-size: 1rem;
+               margin-bottom: 0.5rem;
             }
    
             .buttons{

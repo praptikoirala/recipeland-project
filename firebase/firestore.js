@@ -33,14 +33,14 @@ export const createNewUser = async (userInputs) => {
    
          if (!userDocumentRef.exists) {
              await firestore.collection("ProjectUsers").doc(result.user.uid).set({ ...userInputs, userID: result.user.uid });
+
             window.location.href = "./search.html";
          }
       }
-
-   } catch(error) {
+   }catch(error) {
       const errMessage = error.code;
 
-      if(errMessage == "auth/email-already-in-use"){
+      if(errMessage === "auth/email-already-in-use"){
          showError('email', '*'+ errMessage);
       }
    }
