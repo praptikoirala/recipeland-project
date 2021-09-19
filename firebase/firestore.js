@@ -51,6 +51,7 @@ export const signUserIn = async (email, password) => {
 
    try{
       await auth.signInWithEmailAndPassword(email, password);
+
       window.location.href = "./search.html";
    }catch(error){
       const errMessage = error.code;

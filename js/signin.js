@@ -8,9 +8,13 @@ document.querySelector('.signin-form').addEventListener('submit' , (e) => {
    const userEmail = document.querySelector('.user-email').value;
    const userPassword = document.querySelector('.user-password').value;
 
-   signUserIn(userEmail, userPassword);
-
-   validateRegisteredInput(userEmail, userPassword);
+   try{
+      validateRegisteredInput(userEmail, userPassword);
+      signUserIn(userEmail, userPassword);
+   }catch(error){
+     console.log(error);
+   }
+   
 });
 
 

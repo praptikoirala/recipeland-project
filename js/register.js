@@ -10,7 +10,11 @@ document.querySelector('.signup-form').addEventListener('submit' , (e) => {
    const inputPassword = document.querySelector('.user-password').value;
    const inputRePassword = document.querySelector('.user-re-password').value;
 
-   createNewUser({firstname : inputFirstName,lastname : inputLastName, email : inputEmail,password : inputPassword});
+   try{
+      validateUserInput(inputFirstName, inputLastName,inputEmail, inputPassword, inputRePassword);
 
-   validateUserInput(inputFirstName, inputLastName,inputEmail, inputPassword, inputRePassword);
+      createNewUser({firstname : inputFirstName,lastname : inputLastName, email : inputEmail,password : inputPassword});
+   }catch(error){
+      console.log(error);
+   }
 })

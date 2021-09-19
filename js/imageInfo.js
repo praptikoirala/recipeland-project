@@ -3,19 +3,44 @@ import { showError } from "./errorMsg.js";
 
 const firestore = firebase.firestore();
 
-export async function addToFavorites(recipe){
-   console.log('hello');
+async function addToFavorites(recipe){
 
    const signInUserId = getSignInUserID();
 
    try {
-      await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").add(recipe); 
+      await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").add(recipe);
 
       renderFavoritesButton(recipe.uri).then(data => {
          document.querySelector('.buttons').innerHTML = data;
       });
+
+      showError('Added to favorites');
    } catch (error) {
       // document.querySelector('.favorites').innerText = 'Something went wrong';
+   }  
+}
+
+async function removeFromFavorites(recipe){
+
+   const signInUserId = getSignInUserID();
+
+   // const result = await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").where("uri", "==" , recipe.uri).get();
+
+   // console.log(result.data());
+
+   try {
+      const recipesRef = await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").where("uri", "==", recipe.uri).get();
+
+      await recipesRef.docs[0].ref.delete();
+
+      renderFavoritesButton(recipe.uri).then(data => {
+         document.querySelector('.buttons').innerHTML = data;
+      });
+
+      showError('Removed from favorites');
+   } catch (error) {
+      console.log(error);
+      document.querySelector('.favorites').innerText = 'Something went wrong';
    }  
 }
 
@@ -27,15 +52,16 @@ export function getRecipe(recipes, e) {
    return recipe;
 }
 
-export async function renderFavoritesButton(uri) {
-   let button = '' ;
+export async function renderFavoritesButton(uri){
+   
 
-   // button += `<button class='favorites loading-favorites-button' disabled>Loading...</button>`;
+   let button = '';
 
    const firestore = firebase.firestore();
    const signInUserId = getSignInUserID();
 
-   const result = await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").where("uri", "==", uri).get();
+   try{
+      const result = await firestore.collection("ProjectUsers").doc(signInUserId).collection("favorites").where("uri", "==", uri).get();
 
       if (result.docs.length > 0) {
          button += `<button class='favorites remove-from-favorites'>Remove from favorites</button>`;
@@ -43,14 +69,23 @@ export async function renderFavoritesButton(uri) {
       else{
          button += `<button class='favorites add-to-favorites'>Add to favorites</button>`;
       }
+   }catch(error){
+      button += `<button class='favorites'>Failed to load...</button>`;
+   }
+
    return button;
 }
 
 export function innerDetails(recipe){
 
-   document.querySelector('.buttons').addEventListener('click' , () => {
-      addToFavorites(recipe);
-      showError("Added to favorites");
+   document.querySelector('.buttons').addEventListener('click' , (e) => {
+      if(e.target.classList.contains('add-to-favorites')){
+         addToFavorites(recipe);
+      }
+
+      if(e.target.classList.contains('remove-from-favorites')){
+         removeFromFavorites(recipe);
+      }
    });
 
    document.querySelector('.back').addEventListener('click' , () => {

@@ -72,11 +72,12 @@ export function displayDetails(recipe){
       dietLabel = recipe.dietLabels;
    }
 
-   if(!recipe.mealType){
-      mealType = 'Not Available';
-   }else{
-      mealType = recipe.mealType;
-   }
+   // if(!recipe.mealType){
+   //    mealType = 'Not Available';
+   // }else{
+   //    mealType = recipe.mealType;
+   // }
+   mealType = recipe.mealType || "Not Available";
 
    if(!recipe.cuisineType){
       cuisineType = 'Not Available';
@@ -92,11 +93,13 @@ export function displayDetails(recipe){
       document.querySelector('.buttons').innerHTML = data;
    });
 
+
    output += `
       <div class='details'> 
          <div class="block-error-msg">
-              
+
          </div>
+
          <div class='heading'>
             <a class='back'><i class="fas fa-arrow-left"></i></a>
             <h1 class='info-head'>${recipe.label}</h1>
@@ -106,7 +109,7 @@ export function displayDetails(recipe){
             <div class='image-sec'>
                <img src='${recipe.image}' class='details-img'/>
                <div class="buttons">
-
+                  <button class='favorites remove-from-favorites'>Loading...</button>
                </div>
             </div>
             <div class='ingredients-sec'>

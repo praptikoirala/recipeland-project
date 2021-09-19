@@ -8,7 +8,6 @@ import { loadMore } from "./morerecipes.js";
 const userInput = document.querySelector('.user-inp');
 const form = document.querySelector('.form-sec');
 const displaySec = document.querySelector('.recipe-disp');
-// const recipeDetailsSec = document.querySelector('.details-container');
 
 const recipe = new Recipes;
 
@@ -40,15 +39,12 @@ form.addEventListener('submit' , (e) => {
             detailedInfo(data);
 
             loadMore(data, query);
-
          })
-         // .catch(error){
-         //    resultMessage.innerHTML = `<h1 class='result-head'>Something went wrong</h1>`;
-         // };
 
    }else{
       showError('Nothing to search...');
    }
 
 });
+
 

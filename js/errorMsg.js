@@ -1,13 +1,12 @@
 export function showError(errMessage){
+  const errorMsgContainer = document.querySelector('.alert-msg');
 
-  const errorMsgContainer = document.querySelector('.block-error-msg');
+  errorMsgContainer.classList.add('show-alert');
 
-  errorMsgContainer.style.display = 'block';
+  errorMsgContainer.innerHTML = errMessage;
 
-  errorMsgContainer.innerText = errMessage;
-
-   setTimeout( () => {
-     errorMsgContainer.style.display = 'none';
-   } , 2000);
+  setTimeout( () => {
+    errorMsgContainer.classList.remove('show-alert');
+  } , 2000);
 
 }

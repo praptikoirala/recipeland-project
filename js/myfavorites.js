@@ -1,57 +1,49 @@
-const firestore = firebase.firestore();
-
 import { getSignInUserID } from "../firebase/firestore.js";
 import { getRecipe, innerDetails } from "./imageInfo.js";
 import { displayDetails, renderRecipes} from "./renderingrecipe.js";
-import { showLoader, hideLoader } from "./loader.js";
 
-const favoritesSec = document.querySelector('.recipe-disp'); 
+const firestore = firebase.firestore();
 
-showLoader();
-
-document.querySelector('.favorites-container').addEventListener("click", displayFavoriteRecipes);
+document.querySelector(".favorites-img").onload = displayFavoriteRecipes;
 
 function displayFavoriteRecipes(){
+   console.log("pratiic");
+   // const favoritesSec = document.querySelector('.recipe-disp'); 
+   // let result = '';
+   // const userID = getSignInUserID();
+   // const recipes = [];
 
-   let result = '';
+   // firestore.collection("ProjectUsers").doc(userID).collection("favorites").onSnapshot(snapshot => {
+   //    snapshot.docs.forEach(doc => {
+   //       recipes.push(doc.data());
+   //    });
 
-   const userID = getSignInUserID();
-   const recipes = [];
+   //    result += renderRecipes(recipes);
 
-   firestore.collection("ProjectUsers").doc(userID).collection("favorites").onSnapshot(snapshot => {
+   //    favoritesSec.innerHTML = result;
+
+   //    favoritesSec.addEventListener('click' , (e) => {
+
+   //       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
+            
+   //          document.querySelector('.favorites-container').style.display = 'none';
+   //          document.querySelector('.favorites-details-container').style.display = 'flex';
    
-      snapshot.docs.forEach(doc => {
-         recipes.push(doc.data());
-      });
-
-      result += renderRecipes(recipes);
-
-      hideLoader();
-
-      favoritesSec.innerHTML = result;
-
-   })
-
-   favoritesSec.addEventListener('click' , (e) => {
-
-      if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
-         
-         document.querySelector('.favorites-container').style.display = 'none';
-         document.querySelector('.favorites-details-container').style.display = 'flex';
-
-         const result = getRecipe(recipes, e);
-
-         const favoriteRecipeDetails = document.querySelector('.favorites-details-container');
-
-         hideLoader();
-
-         favoriteRecipeDetails.innerHTML = displayDetails(result);
+   //          const result = getRecipe(recipes, e);
    
-         innerDetails(result);
-      }
-
-   })
+   //          const favoriteRecipeDetails = document.querySelector('.favorites-details-container');
+   
+   //          hideLoader();
+   
+   //          favoriteRecipeDetails.innerHTML = displayDetails(result);
+      
+   //          innerDetails(result);
+   //       }
+   
+   //    })
+   // })
 
 }
-  
+
+// displayFavoriteRecipes();
   
