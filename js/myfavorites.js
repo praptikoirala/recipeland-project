@@ -4,46 +4,43 @@ import { displayDetails, renderRecipes} from "./renderingrecipe.js";
 
 const firestore = firebase.firestore();
 
-document.querySelector(".favorites-img").onload = displayFavoriteRecipes;
+document.querySelector(".favorites-container").addEventListener('click' , displayFavoriteRecipes);
 
 function displayFavoriteRecipes(){
-   console.log("pratiic");
-   // const favoritesSec = document.querySelector('.recipe-disp'); 
-   // let result = '';
-   // const userID = getSignInUserID();
-   // const recipes = [];
+   const favoritesSec = document.querySelector('.recipe-disp'); 
+   let result = '';
+   const userID = getSignInUserID();
+   const recipes = [];
 
-   // firestore.collection("ProjectUsers").doc(userID).collection("favorites").onSnapshot(snapshot => {
-   //    snapshot.docs.forEach(doc => {
-   //       recipes.push(doc.data());
-   //    });
+   firestore.collection("ProjectUsers").doc(userID).collection("favorites").onSnapshot(snapshot => {
+      snapshot.docs.forEach(doc => {
+         recipes.push(doc.data());
+      });
 
-   //    result += renderRecipes(recipes);
+      result += renderRecipes(recipes);
 
-   //    favoritesSec.innerHTML = result;
+      favoritesSec.innerHTML = result;
 
-   //    favoritesSec.addEventListener('click' , (e) => {
+      favoritesSec.addEventListener('click' , (e) => {
 
-   //       if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
+         if(e.target.classList.contains('recipeImage') || e.target.classList.contains('infoItem') ){
             
-   //          document.querySelector('.favorites-container').style.display = 'none';
-   //          document.querySelector('.favorites-details-container').style.display = 'flex';
+            document.querySelector('.favorites-container').style.display = 'none';
+            document.querySelector('.favorites-details-container').style.display = 'flex';
    
-   //          const result = getRecipe(recipes, e);
+            const result = getRecipe(recipes, e);
    
-   //          const favoriteRecipeDetails = document.querySelector('.favorites-details-container');
+            const favoriteRecipeDetails = document.querySelector('.favorites-details-container');
    
-   //          hideLoader();
+            hideLoader();
    
-   //          favoriteRecipeDetails.innerHTML = displayDetails(result);
+            favoriteRecipeDetails.innerHTML = displayDetails(result);
       
-   //          innerDetails(result);
-   //       }
+            innerDetails(result);
+         }
    
-   //    })
-   // })
+      })
+   })
 
 }
-
-// displayFavoriteRecipes();
   
