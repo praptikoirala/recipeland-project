@@ -32,8 +32,6 @@ function displayFavoriteRecipes(){
    
             const favoriteRecipeDetails = document.querySelector('.favorites-details-container');
    
-            hideLoader();
-   
             favoriteRecipeDetails.innerHTML = displayDetails(result);
       
             innerDetails(result);
