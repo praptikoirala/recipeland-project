@@ -1,5 +1,37 @@
 @import 'variables';
 
+@media(max-width:1200px){
+   .nav-bar{
+      .menu-items{
+
+         li{
+            // padding-left:1.25rem;
+            padding-left:1.25rem;
+
+            a{
+               font-size: 1.05rem;
+   
+               i{
+                  padding-right:0.35rem;
+               }
+            }
+   
+            &.sign-out{
+               font-size: 1.05rem;
+              
+               i{
+                  padding-right:0.35rem;
+               }
+            }
+         }
+
+         .signin-user-name{
+            margin-left: 1.5rem;
+         }
+      }
+   }
+}
+
 @media(max-width:900px){
 
    .nav-bar{
