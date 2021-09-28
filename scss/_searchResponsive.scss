@@ -111,6 +111,7 @@
             padding: 0.75rem 1.5rem; 
          
             .heading{ 
+               padding: 0rem 6.5rem;
          
                .info-head{
                   font-size: 1.65rem;
@@ -148,6 +149,7 @@
             padding: 0.75rem 1rem; 
    
             .heading{ 
+               padding: 0rem 2rem;
       
                .info-head{
                   font-size: 1.55rem;
@@ -192,7 +194,15 @@
       .details-container{
          
          .details{   
-            padding: 0.75rem 2rem;    
+            padding: 0.75rem 2rem; 
+            
+            .heading{ 
+               padding: 0rem 0.5rem;
+      
+               .info-head{
+                  font-size: 1.55rem;
+               }
+            } 
 
             .inner-heading{
                font-size: 1.25rem;
@@ -275,7 +285,6 @@
             .heading{
 
                .info-head{
-                  margin-left: 1.75rem;
                   font-size: 1.35rem;
                }
             }
@@ -416,7 +425,7 @@
       
                .info-head{
                   font-size: 1.35rem;
-                  margin-left: 1.5rem;
+                  margin-left: 1rem;
                }
             }
 
@@ -495,13 +504,6 @@
          .details{  
             padding: 0.75rem 1rem;
 
-            .heading{ 
-      
-               .info-head{
-                  margin-left: 1rem;
-               }
-            }
-
             .recipe-ingredients{
                .image-sec{
    
@@ -513,7 +515,6 @@
 
                      .favorites{
                         width: 90%;
-                        // font-size: 0.95rem;
                      }
                   }
                }
@@ -530,7 +531,6 @@
             .heading{ 
                .info-head{
                   font-size: 1.3rem;
-                  margin-left: 0.75rem;
                }
             }
          }

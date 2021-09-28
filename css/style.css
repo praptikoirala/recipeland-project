@@ -839,6 +839,11 @@ section .details-container {
   background: rgba(170, 216, 211, 0.75);
 }
 
+section .details-container.favorites-details-container .details .heading {
+  display: flex;
+  justify-content: center;
+}
+
 section .details-container.favorites-details-container .details .heading a {
   display: none;
 }
@@ -858,10 +863,10 @@ section .details-container .details .inner-heading {
 
 section .details-container .details .heading {
   width: 100%;
-  padding: 0rem 1.5rem;
+  padding: 0rem 7.5rem;
   margin-bottom: 1rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   color: #393e46;
@@ -887,7 +892,6 @@ section .details-container .details .heading a:active {
 section .details-container .details .heading .info-head {
   text-align: center;
   font-size: 1.75rem;
-  margin-left: 3rem;
 }
 
 section .details-container .details .recipe-ingredients {
@@ -1114,6 +1118,9 @@ section .details-container .details .add-info .view-more:active {
   section .details-container .details {
     padding: 0.75rem 1.5rem;
   }
+  section .details-container .details .heading {
+    padding: 0rem 6.5rem;
+  }
   section .details-container .details .heading .info-head {
     font-size: 1.65rem;
   }
@@ -1131,6 +1138,9 @@ section .details-container .details .add-info .view-more:active {
   }
   section .details-container .details {
     padding: 0.75rem 1rem;
+  }
+  section .details-container .details .heading {
+    padding: 0rem 2rem;
   }
   section .details-container .details .heading .info-head {
     font-size: 1.55rem;
@@ -1157,6 +1167,12 @@ section .details-container .details .add-info .view-more:active {
 @media (max-width: 875px) {
   section .details-container .details {
     padding: 0.75rem 2rem;
+  }
+  section .details-container .details .heading {
+    padding: 0rem 0.5rem;
+  }
+  section .details-container .details .heading .info-head {
+    font-size: 1.55rem;
   }
   section .details-container .details .inner-heading {
     font-size: 1.25rem;
@@ -1210,7 +1226,6 @@ section .details-container .details .add-info .view-more:active {
     padding: 0.5rem 1.75rem 0.75rem 1.75rem;
   }
   section .details-container .details .heading .info-head {
-    margin-left: 1.75rem;
     font-size: 1.35rem;
   }
   section .details-container .details .recipe-ingredients .image-sec .details-img {
@@ -1268,7 +1283,7 @@ section .details-container .details .add-info .view-more:active {
   }
   section .details-container .details .heading .info-head {
     font-size: 1.35rem;
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
   section .details-container .details .recipe-ingredients .image-sec .details-img {
     width: 70%;
@@ -1309,9 +1324,6 @@ section .details-container .details .add-info .view-more:active {
   section .details-container .details {
     padding: 0.75rem 1rem;
   }
-  section .details-container .details .heading .info-head {
-    margin-left: 1rem;
-  }
   section .details-container .details .recipe-ingredients .image-sec .details-img {
     width: 90%;
   }
@@ -1323,7 +1335,6 @@ section .details-container .details .add-info .view-more:active {
 @media (max-width: 375px) {
   section .details-container .details .heading .info-head {
     font-size: 1.3rem;
-    margin-left: 0.75rem;
   }
 }
 

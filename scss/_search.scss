@@ -129,6 +129,8 @@ section{
       &.favorites-details-container{
          .details{
             .heading{
+               display: flex;
+               justify-content: center;
                a{
                   display: none;
                }
@@ -151,10 +153,10 @@ section{
 
          .heading{ 
             width: 100%;
-            padding: 0rem 1.5rem;
+            padding: 0rem 7.5rem;
             margin-bottom: 1rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             text-align: center;
             color: $dark-color;
@@ -177,11 +179,8 @@ section{
             }
 
             .info-head{
-               // width: 85%;
-               // border: 1px solid red;
                text-align: center;
                font-size: 1.75rem;
-               margin-left: 3rem;
             }
          }
 
