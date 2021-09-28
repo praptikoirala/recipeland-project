@@ -1,6 +1,5 @@
-import { hideNavLinks, showNavLinks , hideSignOut } from "../js/navigation.js";
+import { hideNavLinks, showNavLinks , hideSignOut} from "../js/navigation.js";
 import { showError } from "../js/validationdetails.js";
-// import { validateRegisteredEmailPassword } from "../js/signin.js";
 
 const firestore = firebase.firestore();
 const auth = firebase.auth();
@@ -52,7 +51,7 @@ export const signUserIn = async (email, password) => {
    try{
       await auth.signInWithEmailAndPassword(email, password);
 
-      window.location.href = "./search.html";
+      window.location.href = "./search.html";    
    }catch(error){
       const errMessage = error.code;
 

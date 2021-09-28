@@ -38,25 +38,11 @@
          margin-bottom:1rem;
       }
 
-      .buttons{
-         display: grid;
-         grid-template-columns: 1fr;
-         grid-gap:0.75rem;
+      .home-signin-button{
+         display: none;
 
          .btn{
             @extend %btn-style;
-         }
-
-         .start-btn{
-            color:$light-color;
-            background: $primary-color;
-            border:1px solid $primary-color;
-
-            &:hover{
-               background:$light-color;
-               border:1px solid $light-color;
-               color:$primary-color;
-            }
          }
 
          .signin-btn{
@@ -69,6 +55,7 @@
                background: $primary-color;
                border:1px solid $primary-color;
             }
+
          }
       }
    }

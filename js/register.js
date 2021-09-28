@@ -13,7 +13,7 @@ document.querySelector('.signup-form').addEventListener('submit' , (e) => {
    try{
       validateUserInput(inputFirstName, inputLastName,inputEmail, inputPassword, inputRePassword);
 
-      createNewUser({firstname : inputFirstName,lastname : inputLastName, email : inputEmail,password : inputPassword});
+      createNewUser({firstname : inputFirstName, lastname : inputLastName, email : inputEmail,password : inputPassword});
    }catch(error){
       console.log(error);
    }

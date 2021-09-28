@@ -125,6 +125,17 @@ section{
       align-items: center;
       padding: 1rem 2rem;
       background:rgba(170,216,211,0.75);
+
+      &.favorites-details-container{
+         .details{
+            .heading{
+               a{
+                  display: none;
+               }
+            }
+         }
+
+      }
       
       .details{
          width: 100%;
@@ -139,6 +150,7 @@ section{
          }
 
          .heading{ 
+            width: 100%;
             padding: 0rem 1.5rem;
             margin-bottom: 1rem;
             display: flex;
@@ -148,26 +160,28 @@ section{
             color: $dark-color;
    
             a{
-               padding: 0.5rem;
-               color: $dark-color;
-               font-size: 1.5rem;
                border-radius: 50%;
+               padding: 0.35rem;
+               display: flex;
+               font-size: 1.5rem;
+               color: $dark-color;
 
                &:hover{
                   cursor: pointer;
                }
 
                &:active{
-                  color: $primary-color;
-                  background-color: $light-color;
+                  color: $light-color;
+                  background-color: $dark-color;
                }
             }
 
             .info-head{
-               margin-left: 1rem;
-               width: 100%;
+               // width: 85%;
+               // border: 1px solid red;
                text-align: center;
                font-size: 1.75rem;
+               margin-left: 3rem;
             }
          }
 

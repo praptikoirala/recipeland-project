@@ -11,6 +11,7 @@ export function hideNavLinks(){
    document.querySelector('.search-link').style.display = 'none';
    document.querySelector('.favorites-link').style.display = 'none';
    document.querySelector('.register-link').style.display = 'inline';
+   document.querySelector('.home-signin-button').style.display = 'grid';
 }
 
 export function showSignOut(){
